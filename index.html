@@ -304,6 +304,24 @@
             color: #2a9d8f;
         }
 
+        /* 中段アプリリンクボタン */
+        .app-link-btn {
+            display: inline-block;
+            margin-top: 8px;
+            background-color: #1a2a3a;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+        }
+
+        .app-link-btn:hover {
+            background-color: #ff6b35;
+        }
+
         /* --- 発信内容 / Mission Section --- */
         .mission {
             padding: 80px 0;
@@ -358,29 +376,31 @@
 
         /* --- フッター / Footer --- */
         footer {
-            background-color: #0d161f; /* image_47369c.png に合わせた少し深みのあるダークトーン */
+            background-color: #0d161f; /* 画像の背景色に合わせたトーン */
             color: #ffffff;
-            padding: 60px 0 30px 0;
+            padding: 60px 0 40px 0;
             text-align: center;
         }
 
         .footer-cta h2 {
             font-size: 24px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
         }
 
         .footer-cta h2 span {
             display: block;
-            font-size: 16px;
+            font-size: 15px;
             color: #a0aec0;
             font-weight: normal;
-            margin-top: 5px;
+            margin-top: 6px;
         }
 
         .footer-cta p {
             color: #ff6b35;
             margin-bottom: 30px;
             font-weight: bold;
+            font-size: 18px;
         }
 
         .footer-cta p span {
@@ -388,31 +408,31 @@
             color: #a0aec0;
             font-size: 14px;
             font-weight: normal;
-            margin-top: 5px;
+            margin-top: 6px;
         }
 
-        /* image_47369c.png の丸っこくてシックなボタンデザインを完全再現 */
-        .sns-links {
-            margin-bottom: 40px;
+        /* 画像と同じカプセル型のプログラミングボタン構造 */
+        .footer-btn-container {
+            margin-bottom: 45px;
         }
 
-        .sns-link {
+        .footer-app-btn {
             display: inline-block;
             color: #ffffff;
-            background-color: #050a0f; /* カプセル型の黒い背景 */
+            background-color: #050a0f; /* カプセル型の黒背景 */
             text-decoration: none;
-            margin: 0 8px;
             font-weight: bold;
-            font-size: 14px;
-            border: 1px solid rgba(255,255,255,0.15);
-            padding: 12px 28px;
-            border-radius: 25px; /* 完全なカプセル型（角丸） */
+            font-size: 15px;
+            border: 1px solid rgba(255,255,255,0.18);
+            padding: 12px 36px;
+            border-radius: 25px; /* 完全な角丸カプセル型 */
             transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
-        .sns-link:hover {
+        .footer-app-btn:hover {
             background-color: #ffffff;
-            color: #0a1118;
+            color: #050a0f;
             border-color: #ffffff;
         }
 
@@ -429,22 +449,19 @@
             .hero h1 .ja-main { font-size: 24px; }
             .feature-table, .feature-row, .feature-card { display: block; width: 100%; }
             .feature-card { margin-bottom: 20px; }
-            .sns-link { margin-bottom: 10px; padding: 10px 22px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ナビゲーションバー / Navigation Bar -->
     <header>
         <div class="container">
             <div class="nav-container">
-                <div class="logo"><span>My 60s, My Rules</span> ６０代はやりたい放題</div>
+                <div class="logo"><span>My 6s, My Rules</span> ６０代はやりたい放題</div>
             </div>
         </div>
     </header>
 
-    <!-- ヒーロービュー / Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-badge">人生の本番は、60代から。 / The real show starts in your 60s.</div>
@@ -453,14 +470,13 @@
                 <span class="ja-main">６０代はやりたい放題</span>
             </h1>
             <p>
-                <span>退職、ひと段落、そこからが本当の自由時間。プログラミング、アプリ開発からYouTube、ダンスにキャンプ、世界を広げる旅まで。「今が一番忙しくて、今が一番楽しい！」そんな大人たちのための遊び場へようこそ。</span>
-                <span class="en-hero-p">Retirement is just the closing of one chapter and the grand opening of true freedom. From coding, app development, and hosting YouTube channels to social dancing, camping, and cross-country cycling—welcome to the ultimate playground for adults who believe life is busiest and most beautiful right now.</span>
+                <span>退職、ひと段落、そこからが本当の自由時間。プログラミングによるアンケートアプリ開発から、ダンスにキャンプ、世界を広げる旅まで。「今が一番忙しくて、今が一番楽しい！」そんな大人たちのための遊び場へようこそ。</span>
+                <span class="en-hero-p">Retirement is just the closing of one chapter and the grand opening of true freedom. From coding questionnaire web applications to social dancing, camping, and cross-country cycling—welcome to the ultimate playground for adults who believe life is busiest and most beautiful right now.</span>
             </p>
             <a href="#content" class="btn">最新の「やりたい放題」を覗いてみる / See My Latest Adventures</a>
         </div>
     </section>
 
-    <!-- コンセプト / Concept -->
     <section class="concept">
         <div class="container">
             <h2 class="section-title">
@@ -478,18 +494,13 @@
                     <p class="en-para">Things we couldn't do before due to lack of time, diving into brand-new digital tech, and the pure joy of keeping active. It is far too early for today's 60s to play it safe.</p>
                 </div>
                 <div class="concept-block">
-                    <p class="ja-para">画面に向かってプログラミングのコードを書き換えたその足で、ステップを踏みに出かける。YouTubeの動画編集を終えたら、キャンピングカーに自転車を積んで旅に出る。</p>
-                    <p class="en-para">We rewrite lines of programming code for an app project, then immediately head out to practice dance steps. The moment a YouTube video edit finishes, we pack a bicycle onto the camper van and hit the open road.</p>
-                </div>
-                <div class="concept-block">
-                    <p class="ja-para">デジタルも、アナログも、インドアも、アウトドアも。境界線なんて作らずに、やりたいことを全部やる。それが私たちのスタイルです。</p>
-                    <p class="en-para">Digital or analog, indoor or outdoor—we don't believe in boundaries. We do everything we want to do. That is our rule.</p>
+                    <p class="ja-para">画面に向かってプログラミングのコードを書き換え、自作アプリを形にしたその足で、ステップを踏みに出かける。自由な発想をすべてカタチにする、それが私たちのスタイルです。</p>
+                    <p class="en-para">We rewrite lines of programming code to build our own web apps, then immediately head out to practice dance steps. Bringing every creative spark to life—that is our rule.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 活動内容紹介 / Features -->
     <section class="features" id="content">
         <div class="container">
             <h2 class="section-title" style="text-align: center;">
@@ -500,25 +511,20 @@
             
             <div class="feature-table">
                 <div class="feature-row">
-                    <!-- カード 1：テック＆クリエイティブ -->
                     <div class="feature-card">
                         <div class="icon-box">💻</div>
                         <h3>TECH & CREATIVE</h3>
                         <ul>
                             <li>
                                 <strong>プログラミング & アプリ開発<span>Programming & App Development</span></strong>
-                                頭をフル回転させて、世の中にない仕組みをゼロから構築する。いくつになっても、新しい言語や技術を学ぶスリルはたまらない。
-                                <span class="en-text">Keeping the brain wired by writing clean code and building apps from scratch. Nothing beats the thrill of mastering new languages and tech at any age.</span>
-                            </li>
-                            <li>
-                                <strong>YouTube & SNS発信<span>YouTube & Social Media</span></strong>
-                                自分の「おもしろい」を動画にして世界へ。動画の企画から、凝った編集、サムネイル作りまで、すべてが新しいクリエイティブ。
-                                <span class="en-text">Sharing personal passions with the world through video. Content creation, video editing, and thumbnail design are our new creative outlets.</span>
+                                頭をフル回転させて、仕組みをゼロから構築する。実際にWeb上で動くアンケートアプリなどを開発しています。
+                                <br>
+                                <a href="https://kenken6291.github.io/apri-anketo/" target="_blank" class="app-link-btn">開発したアプリを見る / View Web App →</a>
+                                <span class="en-text">Keeping the brain wired by building systems from scratch. I create functional web apps such as online questionnaires.</span>
                             </li>
                         </ul>
                     </div>
 
-                    <!-- カード 2：アクティビティ -->
                     <div class="feature-card blue-top">
                         <div class="icon-box">🕺</div>
                         <h3>MOVE & GROOVE</h3>
@@ -536,7 +542,6 @@
                         </ul>
                     </div>
 
-                    <!-- カード 3：アウトドア -->
                     <div class="feature-card green-top">
                         <div class="icon-box">🗺️</div>
                         <h3>TRAVEL & OUTDOOR</h3>
@@ -559,7 +564,6 @@
         </div>
     </section>
 
-    <!-- 発信内容 / Topics -->
     <section class="mission">
         <div class="container">
             <h2 class="section-title" style="text-align: center;">
@@ -573,8 +577,8 @@
                     <div class="mission-num">01</div>
                     <div class="mission-content">
                         <h4>リアルな実践レビュー <span>Real Reviews & Progress</span></h4>
-                        <p>「独学から始めるプログラミングの進捗」や「YouTube運営の裏側」を包み隠さずシェアします。</p>
-                        <p class="en-text">Sharing the transparent journey of coding progress, learning app frameworks, and the behind-the-scenes of growing a YouTube channel.</p>
+                        <p>「独学から始めるプログラミングの進捗」や「新機能の実装の裏側」を包み隠さずシェアします。</p>
+                        <p class="en-text">Sharing the transparent journey of coding progress, learning app frameworks, and the behind-the-scenes of deploying applications.</p>
                     </div>
                 </div>
                 
@@ -582,8 +586,8 @@
                     <div class="mission-num">02</div>
                     <div class="mission-content">
                         <h4>大人のガジェット＆ギア紹介 <span>Gadgets & Gear Guide</span></h4>
-                        <p>キャンピングカーの快適化、動画編集や開発の機材、旅の相棒となる自転車など、こだわりの道具たちを徹底解剖します。</p>
-                        <p class="en-text">Deep dives into essential gear, from camper van customization ideas and coding/video equipment to our trusted travel bicycles.</p>
+                        <p>キャンピングカーの快適化、開発に使う機材、旅の相棒となる自転車など、こだわりの道具たちを徹底解剖します。</p>
+                        <p class="en-text">Deep dives into essential gear, from camper van customization ideas and coding equipment to our trusted travel bicycles.</p>
                     </div>
                 </div>
 
@@ -599,7 +603,6 @@
         </div>
     </section>
 
-    <!-- フッター / Footer -->
     <footer>
         <div class="container">
             <div class="footer-cta">
@@ -611,11 +614,8 @@
                 </p>
             </div>
             
-            <!-- image_47369c.png のように配置されるカプセルボタンエリア -->
-            <div class="sns-links">
-                <a href="#" class="sns-link">YouTube</a>
-                <a href="#" class="sns-link">X (Twitter)</a>
-                <a href="#" class="sns-link">Instagram</a>
+            <div class="footer-btn-container">
+                <a href="https://kenken6291.github.io/apri-anketo/" target="_blank" class="footer-app-btn">プログラミング / Programming</a>
             </div>
             
             <div class="copyright">
