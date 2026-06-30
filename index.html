@@ -81,22 +81,17 @@
             letter-spacing: 1px;
         }
 
-        /* --- ヒーローセクション / Hero Section --- */
+        /* --- ヒーローセクション（写真背景適用） / Hero Section --- */
         .hero {
-            background: linear-gradient(135deg, #1a2a3a 0%, #0a1118 100%);
+            /* いただいた写真を背景に指定し、ダークグラデーションを重ねて文字の視認性を確保 */
+            background: linear-gradient(rgba(10, 17, 24, 0.75), rgba(10, 17, 24, 0.85)), url('Gemini_Generated_Image_vmt5l3vmt5l3vmt5.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* スクロール時に背景を固定して立体感を演出 */
             color: #ffffff;
-            padding: 100px 0;
+            padding: 140px 0;
             text-align: center;
             position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.15) 0%, transparent 50%);
-            pointer-events: none;
         }
 
         .hero-badge {
@@ -107,19 +102,20 @@
             font-weight: 700;
             border-radius: 20px;
             display: inline-block;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             letter-spacing: 1px;
         }
 
         .hero h1 {
-            font-size: 42px;
-            margin-bottom: 24px;
+            font-size: 46px;
+            margin-bottom: 28px;
             letter-spacing: -1px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
 
         .hero h1 .en-main {
             display: block;
-            font-size: 48px;
+            font-size: 52px;
             color: #ffffff;
             font-weight: 900;
             letter-spacing: 2px;
@@ -128,45 +124,48 @@
 
         .hero h1 .ja-main {
             display: block;
-            font-size: 32px;
+            font-size: 34px;
             color: #ff6b35;
         }
 
         .hero p {
-            font-size: 16px;
-            max-width: 800px;
-            margin: 0 auto 40px auto;
-            color: #e0e6ed;
-            font-weight: 300;
+            font-size: 17px;
+            max-width: 850px;
+            margin: 0 auto 45px auto;
+            color: #f0f4f8;
+            font-weight: 400;
             line-height: 1.8;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
         }
 
         .hero p span {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .hero p .en-hero-p {
             font-size: 14px;
-            color: #a0aec0;
+            color: #cbd5e0;
+            font-weight: 300;
         }
 
         .btn {
             display: inline-block;
             background-color: #ff6b35;
             color: #ffffff;
-            padding: 16px 36px;
+            padding: 18px 40px;
             font-size: 16px;
             font-weight: 700;
             text-decoration: none;
             border-radius: 30px;
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
-            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
+            transition: all 0.2s ease;
         }
 
         .btn:hover {
             background-color: #e55a2b;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.5);
         }
 
         /* --- イントロダクション / Concept Section --- */
@@ -304,7 +303,7 @@
             color: #2a9d8f;
         }
 
-        /* アプリ紹介用動画プレイヤーのスタイル */
+        /* 動画プレイヤー設定 */
         .video-container {
             width: 100%;
             margin: 15px 0;
@@ -457,8 +456,9 @@
             padding-top: 20px;
         }
 
-        /* --- スマートフォン用調整（レスポンシブ） / Responsive --- */
+        /* --- スマートフォン用調整 / Responsive --- */
         @media (max-width: 768px) {
+            .hero { padding: 100px 0; background-attachment: scroll; } /* スマホ向けに背景の固定を解除 */
             .hero h1 .en-main { font-size: 36px; }
             .hero h1 .ja-main { font-size: 24px; }
             .feature-table, .feature-row, .feature-card { display: block; width: 100%; }
@@ -477,7 +477,7 @@
         </div>
     </header>
 
-    <!-- ヒーロービュー / Hero Section -->
+    <!-- ヒーロービュー（画像背景エリア） / Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-badge">人生の本番は、60代から。 / The real show starts in your 60s.</div>
@@ -642,7 +642,6 @@
                 </p>
             </div>
             
-            <!-- カプセル型のプログラミングアプリ用リンクボタン -->
             <div class="footer-btn-container">
                 <a href="https://kenken6291.github.io/apri-anketo/" target="_blank" class="footer-app-btn">プログラミング / Programming</a>
             </div>
