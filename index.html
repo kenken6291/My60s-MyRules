@@ -296,6 +296,14 @@
             font-weight: 600;
         }
 
+        .feature-card.blue-top li strong span {
+            color: #00b4d8;
+        }
+
+        .feature-card.green-top li strong span {
+            color: #2a9d8f;
+        }
+
         /* --- 発信内容 / Mission Section --- */
         .mission {
             padding: 80px 0;
@@ -350,7 +358,7 @@
 
         /* --- フッター / Footer --- */
         footer {
-            background-color: #0a1118;
+            background-color: #0d161f; /* image_47369c.png に合わせた少し深みのあるダークトーン */
             color: #ffffff;
             padding: 60px 0 30px 0;
             text-align: center;
@@ -383,6 +391,7 @@
             margin-top: 5px;
         }
 
+        /* image_47369c.png の丸っこくてシックなボタンデザインを完全再現 */
         .sns-links {
             margin-bottom: 40px;
         }
@@ -390,19 +399,21 @@
         .sns-link {
             display: inline-block;
             color: #ffffff;
+            background-color: #050a0f; /* カプセル型の黒い背景 */
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0 8px;
             font-weight: bold;
-            font-size: 13px;
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 8px 16px;
-            border-radius: 20px;
-            transition: all 0.2s;
+            font-size: 14px;
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 12px 28px;
+            border-radius: 25px; /* 完全なカプセル型（角丸） */
+            transition: all 0.2s ease;
         }
 
         .sns-link:hover {
             background-color: #ffffff;
             color: #0a1118;
+            border-color: #ffffff;
         }
 
         .copyright {
@@ -418,6 +429,7 @@
             .hero h1 .ja-main { font-size: 24px; }
             .feature-table, .feature-row, .feature-card { display: block; width: 100%; }
             .feature-card { margin-bottom: 20px; }
+            .sns-link { margin-bottom: 10px; padding: 10px 22px; }
         }
     </style>
 </head>
@@ -441,8 +453,8 @@
                 <span class="ja-main">６０代はやりたい放題</span>
             </h1>
             <p>
-                <span>退職、ひと段落、そこからが本当の自由時間。アプリ開発からYouTube、ダンスにキャンプ、世界を広げる旅まで。「今が一番忙しくて、今が一番楽しい！」そんな大人たちのための遊び場へようこそ。</span>
-                <span class="en-hero-p">Retirement is just the closing of one chapter and the grand opening of true freedom. From coding apps and hosting YouTube channels to social dancing, camping, and cross-country cycling—welcome to the ultimate playground for adults who believe life is busiest and most beautiful right now.</span>
+                <span>退職、ひと段落、そこからが本当の自由時間。プログラミング、アプリ開発からYouTube、ダンスにキャンプ、世界を広げる旅まで。「今が一番忙しくて、今が一番楽しい！」そんな大人たちのための遊び場へようこそ。</span>
+                <span class="en-hero-p">Retirement is just the closing of one chapter and the grand opening of true freedom. From coding, app development, and hosting YouTube channels to social dancing, camping, and cross-country cycling—welcome to the ultimate playground for adults who believe life is busiest and most beautiful right now.</span>
             </p>
             <a href="#content" class="btn">最新の「やりたい放題」を覗いてみる / See My Latest Adventures</a>
         </div>
@@ -466,8 +478,8 @@
                     <p class="en-para">Things we couldn't do before due to lack of time, diving into brand-new digital tech, and the pure joy of keeping active. It is far too early for today's 60s to play it safe.</p>
                 </div>
                 <div class="concept-block">
-                    <p class="ja-para">アプリ開発のコードを書き換えたその足で、ステップを踏みに出かける。YouTubeの動画編集を終えたら、キャンピングカーに自転車を積んで旅に出る。</p>
-                    <p class="en-para">We write lines of code for an app development project, then immediately head out to practice dance steps. The moment a YouTube video edit finishes, we pack a bicycle onto the camper van and hit the open road.</p>
+                    <p class="ja-para">画面に向かってプログラミングのコードを書き換えたその足で、ステップを踏みに出かける。YouTubeの動画編集を終えたら、キャンピングカーに自転車を積んで旅に出る。</p>
+                    <p class="en-para">We rewrite lines of programming code for an app project, then immediately head out to practice dance steps. The moment a YouTube video edit finishes, we pack a bicycle onto the camper van and hit the open road.</p>
                 </div>
                 <div class="concept-block">
                     <p class="ja-para">デジタルも、アナログも、インドアも、アウトドアも。境界線なんて作らずに、やりたいことを全部やる。それが私たちのスタイルです。</p>
@@ -494,13 +506,13 @@
                         <h3>TECH & CREATIVE</h3>
                         <ul>
                             <li>
-                                <strong>アプリ開発 & IT挑戦<span>App Development & Tech</span></strong>
-                                頭をフル回転させて、世の中にない仕組みを創る。いくつになっても、新しいスキルを学ぶスリルはたまらない。
-                                <span class="en-text">Keeping the brain wired by building systems from scratch. Nothing beats the thrill of mastering new skills at any age.</span>
+                                <strong>プログラミング & アプリ開発<span>Programming & App Development</span></strong>
+                                頭をフル回転させて、世の中にない仕組みをゼロから構築する。いくつになっても、新しい言語や技術を学ぶスリルはたまらない。
+                                <span class="en-text">Keeping the brain wired by writing clean code and building apps from scratch. Nothing beats the thrill of mastering new languages and tech at any age.</span>
                             </li>
                             <li>
                                 <strong>YouTube & SNS発信<span>YouTube & Social Media</span></strong>
-                                自分の「おもしろい」を動画にして世界へ。編集も、サムネイル作りも、すべてが新しいクリエイティブ。
+                                自分の「おもしろい」を動画にして世界へ。動画の企画から、凝った編集、サムネイル作りまで、すべてが新しいクリエイティブ。
                                 <span class="en-text">Sharing personal passions with the world through video. Content creation, video editing, and thumbnail design are our new creative outlets.</span>
                             </li>
                         </ul>
@@ -561,8 +573,8 @@
                     <div class="mission-num">01</div>
                     <div class="mission-content">
                         <h4>リアルな実践レビュー <span>Real Reviews & Progress</span></h4>
-                        <p>「初心者から始めるアプリ開発の進捗」や「YouTube運営の裏側」を包み隠さずシェアします。</p>
-                        <p class="en-text">Sharing the transparent journey of learning app development from scratch and the behind-the-scenes of growing a YouTube channel.</p>
+                        <p>「独学から始めるプログラミングの進捗」や「YouTube運営の裏側」を包み隠さずシェアします。</p>
+                        <p class="en-text">Sharing the transparent journey of coding progress, learning app frameworks, and the behind-the-scenes of growing a YouTube channel.</p>
                     </div>
                 </div>
                 
@@ -570,8 +582,8 @@
                     <div class="mission-num">02</div>
                     <div class="mission-content">
                         <h4>大人のガジェット＆ギア紹介 <span>Gadgets & Gear Guide</span></h4>
-                        <p>キャンピングカーの快適化、動画編集の機材、旅の相棒となる自転車など、こだわりの道具たちを徹底解剖します。</p>
-                        <p class="en-text">Deep dives into essential gear, from camper van customization ideas and video editing equipment to our trusted travel bicycles.</p>
+                        <p>キャンピングカーの快適化、動画編集や開発の機材、旅の相棒となる自転車など、こだわりの道具たちを徹底解剖します。</p>
+                        <p class="en-text">Deep dives into essential gear, from camper van customization ideas and coding/video equipment to our trusted travel bicycles.</p>
                     </div>
                 </div>
 
@@ -579,8 +591,8 @@
                     <div class="mission-num">03</div>
                     <div class="mission-content">
                         <h4>「一歩」を踏み出すヒント <span>Tips for a Bold Start</span></h4>
-                        <p>60代から新しい趣味やコミュニティを始めるときに、ちょっと役立つノウハウやマインドセットをお届けします。</p>
-                        <p class="en-text">Providing practical advice, mindsets, and encouragement for fellow adults looking to embrace new hobbies and communities late in life.</p>
+                        <p>60代から新しい技術、趣味、コミュニティを始めるときに、ちょっと役立つノウハウやマインドセットをお届けします。</p>
+                        <p class="en-text">Providing practical advice, mindsets, and encouragement for fellow adults looking to embrace new technologies, hobbies, and communities late in life.</p>
                     </div>
                 </div>
             </div>
@@ -599,6 +611,7 @@
                 </p>
             </div>
             
+            <!-- image_47369c.png のように配置されるカプセルボタンエリア -->
             <div class="sns-links">
                 <a href="#" class="sns-link">YouTube</a>
                 <a href="#" class="sns-link">X (Twitter)</a>
