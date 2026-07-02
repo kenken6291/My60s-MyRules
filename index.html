@@ -1,4 +1,764 @@
-<!-- お問い合わせセクション（セキュリティ強化版） / Contact Section -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My 60s, My Rules ６０代はやりたい放題</title>
+    <style>
+        /* --- ベース・リセット設定 / Base Reset --- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #222222;
+            background-color: #f8f9fa;
+        }
+
+        /* --- タイポグラフィ / Typography --- */
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .en-sub-title {
+            display: block;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #ff6b35;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .en-text {
+            display: block;
+            font-size: 14px;
+            color: #666666;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        /* --- レイアウトコンテナ / Container --- */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- ヘッダー領域 / Header --- */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: table;
+            width: 100%;
+            height: 70px;
+        }
+
+        .logo {
+            display: table-cell;
+            vertical-align: middle;
+            font-size: 18px;
+            font-weight: 800;
+            color: #ff6b35;
+        }
+
+        .logo span {
+            color: #1a2a3a;
+            font-size: 14px;
+            margin-right: 8px;
+            letter-spacing: 1px;
+        }
+
+        /* --- ヒーローセクション / Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(10, 17, 24, 0.75), rgba(10, 17, 24, 0.85)), url('Gemini_Generated_Image_vmt5l3vmt5l3vmt5.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff;
+            padding: 140px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-badge {
+            background-color: #ff6b35;
+            color: #ffffff;
+            padding: 6px 16px;
+            font-size: 13px;
+            font-weight: 700;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            margin-bottom: 28px;
+            letter-spacing: -1px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero h1 .en-main {
+            display: block;
+            font-size: 52px;
+            color: #ffffff;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .hero h1 .ja-main {
+            display: block;
+            font-size: 34px;
+            color: #ff6b35;
+        }
+
+        .hero p {
+            font-size: 17px;
+            max-width: 850px;
+            margin: 0 auto 45px auto;
+            color: #f0f4f8;
+            font-weight: 400;
+            line-height: 1.8;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+        }
+
+        .hero p span {
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .hero p .en-hero-p {
+            font-size: 14px;
+            color: #cbd5e0;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #ff6b35;
+            color: #ffffff;
+            padding: 18px 40px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 30px;
+            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #e55a2b;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.5);
+        }
+
+        /* --- イントロダクション / Concept Section --- */
+        .concept {
+            padding: 80px 0;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: #ff6b35;
+            border-radius: 2px;
+        }
+
+        .concept-text {
+            max-width: 850px;
+            margin: 0 auto;
+            font-size: 16px;
+            text-align: left;
+            color: #444444;
+            line-height: 1.8;
+        }
+
+        .concept-block {
+            margin-bottom: 25px;
+        }
+
+        .concept-block .ja-para {
+            color: #222222;
+            font-weight: 500;
+        }
+
+        .concept-block .en-para {
+            color: #666666;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        /* --- コンテンツカテゴリー / Features --- */
+        .features {
+            padding: 80px 0;
+            background-color: #f0f4f8;
+        }
+
+        .feature-table {
+            display: table;
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 20px;
+        }
+
+        .feature-row {
+            display: table-row;
+        }
+
+        .feature-card {
+            display: table-cell;
+            width: 33.333%;
+            background-color: #ffffff;
+            padding: 35px 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            vertical-align: top;
+            border-top: 5px solid #ff6b35;
+        }
+
+        .feature-card.blue-top {
+            border-top-color: #00b4d8;
+        }
+
+        .feature-card.green-top {
+            border-top-color: #2a9d8f;
+        }
+
+        .icon-box {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #1a2a3a;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        .feature-card ul {
+            list-style: none;
+        }
+
+        .feature-card li {
+            margin-bottom: 25px;
+            font-size: 14px;
+            color: #333333;
+        }
+
+        .feature-card li:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-card li strong {
+            display: block;
+            font-size: 15px;
+            color: #222222;
+            margin-bottom: 4px;
+        }
+
+        .feature-card li strong span {
+            display: block;
+            font-size: 12px;
+            color: #ff6b35;
+            font-weight: 600;
+        }
+
+        .feature-card.blue-top li strong span {
+            color: #00b4d8;
+        }
+
+        .feature-card.green-top li strong span {
+            color: #2a9d8f;
+        }
+
+        /* 動画プレイヤー設定 */
+        .video-container {
+            width: 100%;
+            margin: 15px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            background-color: #000;
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+
+        /* アプリリンクボタン */
+        .app-link-btn {
+            display: inline-block;
+            margin-top: 8px;
+            background-color: #1a2a3a;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+        }
+
+        .app-link-btn:hover {
+            background-color: #ff6b35;
+        }
+
+        /* --- 発信内容 / Mission Section --- */
+        .mission {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+
+        .mission-list {
+            max-width: 850px;
+            margin: 40px auto 0 auto;
+        }
+
+        .mission-item {
+            display: table;
+            width: 100%;
+            margin-bottom: 25px;
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .mission-num {
+            display: table-cell;
+            width: 60px;
+            font-size: 24px;
+            font-weight: 800;
+            color: #ff6b35;
+            vertical-align: middle;
+        }
+
+        .mission-content {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .mission-content h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #1a2a3a;
+        }
+
+        .mission-content h4 span {
+            font-size: 13px;
+            color: #718096;
+            margin-left: 10px;
+            font-weight: normal;
+        }
+
+        .mission-content p {
+            font-size: 14px;
+            color: #4a5568;
+        }
+
+        /* --- お問い合わせフォーム / Contact Form Section --- */
+        .contact-section {
+            padding: 80px 0;
+            background-color: #f0f4f8;
+        }
+
+        .contact-form {
+            max-width: 650px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            color: #1a2a3a;
+            margin-bottom: 8px;
+        }
+
+        .form-group label span {
+            font-size: 12px;
+            color: #e53e3e;
+            margin-left: 6px;
+            background: #fff5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 15px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            background-color: #f7fafc;
+            color: #222222;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #ff6b35;
+            background-color: #ffffff;
+        }
+
+        .form-note {
+            font-size: 13px;
+            color: #718096;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: #1a2a3a;
+            color: #ffffff;
+            border: none;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .submit-btn:hover {
+            background-color: #ff6b35;
+        }
+
+        #formResult {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 6px;
+            display: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* --- 注意事項 & 免責事項 / Terms & Disclaimer Section --- */
+        .terms-section {
+            padding: 60px 0;
+            background-color: #ffffff;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .terms-container {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: left;
+            font-size: 13px;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        .terms-block {
+            margin-bottom: 25px;
+        }
+
+        .terms-block h4 {
+            font-size: 15px;
+            color: #1a2a3a;
+            margin-bottom: 10px;
+            font-weight: bold;
+            border-left: 3px solid #ff6b35;
+            padding-left: 8px;
+        }
+
+        .terms-block ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        .terms-block li {
+            margin-bottom: 5px;
+        }
+
+        /* --- フッター / Footer --- */
+        footer {
+            background-color: #0d161f;
+            color: #ffffff;
+            padding: 60px 0 40px 0;
+            text-align: center;
+        }
+
+        .footer-cta h2 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .footer-cta h2 span {
+            display: block;
+            font-size: 16px;
+            color: #a0aec0;
+            font-weight: normal;
+            margin-top: 6px;
+        }
+
+        .footer-cta p {
+            color: #ff6b35;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .footer-cta p span {
+            display: block;
+            color: #a0aec0;
+            font-size: 14px;
+            font-weight: normal;
+            margin-top: 6px;
+        }
+
+        .footer-btn-container {
+            margin-bottom: 45px;
+        }
+
+        .footer-app-btn {
+            display: inline-block;
+            color: #ffffff;
+            background-color: #050a0f;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            border: 1px solid rgba(255,255,255,0.18);
+            padding: 12px 36px;
+            border-radius: 25px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .footer-app-btn:hover {
+            background-color: #ffffff;
+            color: #050a0f;
+            border-color: #ffffff;
+        }
+
+        .copyright {
+            font-size: 12px;
+            color: #4a5568;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 20px;
+        }
+
+        /* --- スマートフォン用調整 / Responsive --- */
+        @media (max-width: 768px) {
+            .hero { padding: 100px 0; background-attachment: scroll; }
+            .hero h1 .en-main { font-size: 36px; }
+            .hero h1 .ja-main { font-size: 24px; }
+            .feature-table, .feature-row, .feature-card { display: block; width: 100%; }
+            .feature-card { margin-bottom: 20px; }
+            .contact-form { padding: 25px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ナビゲーションバー / Navigation Bar -->
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo"><span>My 60s, My Rules</span> ６０代はやりたい放題</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ヒーロービュー / Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">人生の本番は、60代から。 / The real show starts in your 60s.</div>
+            <h1>
+                <span class="en-main">My 60s, My Rules</span>
+                <span class="ja-main">６０代はやりたい放題</span>
+            </h1>
+            <p>
+                <span>退職、ひと段落、そこからが本当の自由時間。プログラミングによるアンケートアプリやバーチャルタウンの開発から、ダンスにキャンプ、世界を広げる旅まで。「今が一番忙しくて、今が一番楽しい！」そんな大人たちのための遊び場へようこそ。</span>
+                <span class="en-hero-p">Retirement is just the closing of one chapter and the grand opening of true freedom. From coding questionnaire web apps and virtual towns to social dancing, camping, and cross-country cycling—welcome to the ultimate playground for adults who believe life is busiest and most beautiful right now.</span>
+            </p>
+            <a href="#content" class="btn">最新の「やりたい放題」を覗いてみる / See My Latest Adventures</a>
+        </div>
+    </section>
+
+    <!-- コンセプト / Concept -->
+    <section class="concept">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="en-sub-title">The Philosophy</span>
+                「もう60代」じゃない。「いよいよ60代」だ！
+                <span class="en-text">Not "Already 60", but "Finally 60!"</span>
+            </h2>
+            <div class="concept-text">
+                <div class="concept-block">
+                    <p class="ja-para">「年齢を理由に諦めるなんて、もったいない。」</p>
+                    <p class="en-para">"Giving up on something just because of your age is a total waste."</p>
+                </div>
+                <div class="concept-block">
+                    <p class="ja-para">現役時代には時間がなくてできなかったこと、新しく触れるデジタルテクノロジー、身体を動かす快感。今の60代は、守りに入るには早すぎます。</p>
+                    <p class="en-para">Things we couldn't do before due to lack of time, diving into brand-new digital tech, and the pure joy of keeping active. It is far too early for today's 60s to play it safe.</p>
+                </div>
+                <div class="concept-block">
+                    <p class="ja-para">画面に向かってプログラミングのコードを書き換え、自作アプリやバーチャル空間を形にしたその足で、ステップを踏みに出かける。自由な発想をすべてカタチにする、それが私たちのスタイルです。</p>
+                    <p class="en-para">We rewrite lines of programming code to build our own web apps and virtual spaces, then immediately head out to practice dance steps. Bringing every creative spark to life—that is our rule.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 活動内容紹介 / Features -->
+    <section class="features" id="content">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">
+                <span class="en-sub-title">What I Do</span>
+                広がっていく、大人の遊び場
+                <span class="en-text">An Expanding Playground for Adults</span>
+            </h2>
+            
+            <div class="feature-table">
+                <div class="feature-row">
+                    <!-- カード 1：テック＆クリエイティブ -->
+                    <div class="feature-card">
+                        <div class="icon-box">💻</div>
+                        <h3>TECH & CREATIVE</h3>
+                        <ul>
+                            <li>
+                                <strong>プログラミング & アプリ開発<span>Programming & App Development</span></strong>
+                                頭をフル回転させて、仕組みをゼロから構築する。Webアンケートアプリのほか、チャットや通話で繋がれる魅力的なバーチャルタウンアプリなども開発しています。
+                                
+                                <!-- アプリ紹介動画プレイヤー -->
+                                <div class="video-container">
+                                    <video src="app-video.mp4" controls preload="metadata" playsinline></video>
+                                </div>
+
+                                <a href="https://kenken6291.github.io/apri-anketo/" target="_blank" class="app-link-btn">アンケートアプリを見る / View Questionnaire App →</a>
+                                <span class="en-text">Keeping the brain wired by building systems from scratch. I create functional web apps such as online questionnaires and immersive virtual town communication apps.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- カード 2：アクティビティ -->
+                    <div class="feature-card blue-top">
+                        <div class="icon-box">🕺</div>
+                        <h3>MOVE & GROOVE</h3>
+                        <ul>
+                            <li>
+                                <strong>ソーシャルダンス<span>Social Dancing</span></strong>
+                                音楽に身をまかせ、リズムと一体になる時間。心も身体も、20代の頃より弾んでいるかもしれない。
+                                <span class="en-text">Losing oneself in the rhythm and the music. Both heart and body feel more vibrant and light than ever before.</span>
+                            </li>
+                            <li>
+                                <strong>大人の卓球<span>Table Tennis Circle</span></strong>
+                                一球に集中する快感と、仲間との心地よいラリー。地域のコミュニティを超えて、本気で楽しむ大人の部活。
+                                <span class="en-text">The rush of intense focus on a single ball and great rallies with friends. An adult sports club that goes beyond local circles.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- カード 3：アウトドア -->
+                    <div class="feature-card green-top">
+                        <div class="icon-box">🗺️</div>
+                        <h3>TRAVEL & OUTDOOR</h3>
+                        <ul>
+                            <li>
+                                <strong>キャンピングカー旅<span>Camper Van Life</span></strong>
+                                愛車が動く秘密基地。思い立ったが吉日、日本全国どこでもマイルームにしてしまう究極の自由空間。
+                                <span class="en-text">A mobile base of operations. Spontaneous journeys turn any corner of the country into a personal living room with ultimate freedom.</span>
+                            </li>
+                            <li>
+                                <strong>自転車旅 & キャンプ<span>Cycling & Camping</span></strong>
+                                風を肌で感じながらペダルを漕ぎ、夜は満天の星空の下で火を囲む。五感をフルに解放する旅。
+                                <span class="en-text">Feeling the wind while pedaling through scenic routes and gathering around a campfire under a starry sky. A journey that awakens all five senses.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 発信内容 / Topics -->
+    <section class="mission">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">
+                <span class="en-sub-title">What's Next</span>
+                本サイトで発信していくこと
+                <span class="en-text">What I Share Here</span>
+            </h2>
+            
+            <div class="mission-list">
+                <div class="mission-item">
+                    <div class="mission-num">01</div>
+                    <div class="mission-content">
+                        <h4>リアルな実践レビュー <span>Real Reviews & Progress</span></h4>
+                        <p>「独学から始めるプログラミングの進捗」や「新機能の実装の裏側」を包み隠さずシェアします。</p>
+                        <p class="en-text">Sharing the transparent journey of coding progress, learning app frameworks, and the behind-the-scenes of deploying applications.</p>
+                    </div>
+                </div>
+                
+                <div class="mission-item">
+                    <div class="mission-num">02</div>
+                    <div class="mission-content">
+                        <h4>大人のガジェット＆ギア紹介 <span>Gadgets & Gear Guide</span></h4>
+                        <p>キャンピングカーの快適化、開発に使う機材、旅の相棒となる自転車など、こだわりの道具たちを徹底解剖します。</p>
+                        <p class="en-text">Deep dives into essential gear, from camper van customization ideas and coding equipment to our trusted travel bicycles.</p>
+                    </div>
+                </div>
+
+                <div class="mission-item">
+                    <div class="mission-num">03</div>
+                    <div class="mission-content">
+                        <h4>「一歩」を踏み出すヒント <span>Tips for a Bold Start</span></h4>
+                        <p>60代から新しい技術、趣味、コミュニティを始めるときに、ちょっと役立つノウハウやマインドセットをお届けします。</p>
+                        <p class="en-text">Providing practical advice, mindsets, and encouragement for fellow adults looking to embrace new technologies, hobbies, and communities late in life.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- お問い合わせセクション（セキュリティ強化版） / Contact Section -->
     <section class="contact-section">
         <div class="container">
             <h2 class="section-title" style="text-align: center;">
@@ -8,9 +768,9 @@
             </h2>
             
             <!-- ⚠️ ここにGASのウェブアプリURLを貼り付けてください -->
-            <form class="contact-form" id="secureContactForm" action="YOUR_GAS_WEB_APP_URL_HERE" method="POST">
+            <form class="contact-form" id="secureContactForm" action="https://script.google.com/macros/s/AKfycbwfWMcpAj1tn32mE3EsxFGu5XHKWleQjKlFc06M5c4WyHGuCliQTar4y-8beLslNTHyZA/exec" method="POST">
                 
-                <!-- 🛡️ スパム対策：ハニーポット（人間には見えない隠しフィールド） -->
+                <!-- スパム対策：ハニーポット（人間には見えない隠しフィールド） -->
                 <div style="display:none;">
                     <label>Leave this field blank</label>
                     <input type="text" name="honeypot_field" id="honeypotField" autocomplete="off">
@@ -37,11 +797,9 @@
                     <span style="font-size: 11px; display:block; margin-top:5px;">*Replies will be sent to the email address provided above. Please ensure it is typed correctly.</span>
                 </div>
                 
-                <!-- 送信ボタン（JavaScriptで制御） -->
                 <button type="submit" id="submitBtn" class="submit-btn">送信する / Send Message</button>
                 
-                <!-- 結果通知用メッセージエリア -->
-                <div id="formResult" style="margin-top: 20px; padding: 10px; border-radius: 6px; display: none; font-size: 14px; font-weight: bold;"></div>
+                <div id="formResult"></div>
             </form>
         </div>
     </section>
@@ -59,7 +817,7 @@
                     <h4>免責事項 / Disclaimer</h4>
                     <ul>
                         <li>当サービスで提供する情報や、プログラム・アプリの動作状況については細心の注意を払っておりますが、その完全性、正確性、有用性、および安全性について明示的にも黙示的にもいかなる保証もいたしません。</li>
-                        <li>当サービスのご利用、または何らかの理由により利用できなかったことによって生じたトラブル、損害（直接的・間接的を問わず）について、運営者一切の責任を負いかねます。</li>
+                        <li>当サービスのご利用、または何らかの理由により利用できなかったことによって生じたトラブル、損害（直接的・間接的を問わず）について、運営者は一切の責任を負いかねます。</li>
                         <li>当サービスは、予告なしに内容の変更、追加、または提供の変更・中止を行うことがあります。あらかじめご了承ください。</li>
                     </ul>
                 </div>
@@ -95,48 +853,42 @@
         </div>
     </footer>
 
-    <!-- 🛡️ セキュリティ制御用 JavaScript -->
+    <!-- セキュリティ制御用 JavaScript -->
     <script>
         document.getElementById('secureContactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // 通常のページ遷移をブロック
+            event.preventDefault(); 
             
             var form = this;
             var submitBtn = document.getElementById('submitBtn');
             var resultDiv = document.getElementById('formResult');
             var honeypot = document.getElementById('honeypotField').value;
             
-            // 1. スパムチェック（隠しフィールドに値が入っていたら即遮断）
             if (honeypot !== "") {
                 console.warn("Spam detected.");
                 return; 
             }
             
-            // 2. 二重送信防止（ボタンを無効化）
             submitBtn.disabled = true;
             submitBtn.innerText = "送信中... / Sending...";
             submitBtn.style.backgroundColor = "#718096";
             
-            // 3. データの整形
             var formData = new FormData(form);
             
-            // 4. Fetch API を使った安全な非同期通信
             fetch(form.action, {
                 method: 'POST',
                 body: formData,
-                mode: 'no-cors' // GASのCORS制限を回避する安全なモード
+                mode: 'no-cors' 
             })
             .then(function() {
-                // 送信成功時の処理
                 resultDiv.style.display = "block";
                 resultDiv.style.backgroundColor = "#c6f6d5";
                 resultDiv.style.color = "#22543d";
                 resultDiv.innerText = "お問い合わせを送信しました。ありがとうございました。 / Message sent successfully. Thank you!";
                 
-                form.reset(); // 入力欄をクリア
+                form.reset(); 
                 submitBtn.innerText = "送信完了 / Completed";
             })
             .catch(function(error) {
-                // エラー時の処理
                 resultDiv.style.display = "block";
                 resultDiv.style.backgroundColor = "#fed7d7";
                 resultDiv.style.color = "#742a2a";
