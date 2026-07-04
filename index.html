@@ -1,940 +1,989 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My 60s, My Rules ６０代はやりたい放題</title>
-    <style>
-        /* --- ベース・リセット設定 / Base Reset --- */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-            line-height: 1.6;
-            color: #222222;
-            background-color: #f8f9fa;
-        }
-
-        /* --- タイポグラフィ / Typography --- */
-        h1, h2, h3 {
-            font-weight: 700;
-            line-height: 1.3;
-        }
-
-        .en-sub-title {
-            display: block;
-            font-size: 14px;
-            text-transform: uppercase;
-            color: #ff6b35;
-            letter-spacing: 2px;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-
-        .en-text {
-            display: block;
-            font-size: 14px;
-            color: #666666;
-            margin-top: 4px;
-            font-style: italic;
-        }
-
-        /* --- レイアウトコンテナ / Container --- */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* --- ヘッダー領域 / Header --- */
-        header {
-            background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-container {
-            display: table;
-            width: 100%;
-            height: 70px;
-        }
-
-        .logo {
-            display: table-cell;
-            vertical-align: middle;
-            font-size: 18px;
-            font-weight: 800;
-            color: #ff6b35;
-        }
-
-        .logo span {
-            color: #1a2a3a;
-            font-size: 14px;
-            margin-right: 8px;
-            letter-spacing: 1px;
-        }
-
-        /* --- ヒーローセクション / Hero Section --- */
-        .hero {
-            background: linear-gradient(rgba(10, 17, 24, 0.75), rgba(10, 17, 24, 0.85)), url('Gemini_Generated_Image_vmt5l3vmt5l3vmt5.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: #ffffff;
-            padding: 140px 0;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-badge {
-            background-color: #ff6b35;
-            color: #ffffff;
-            padding: 6px 16px;
-            font-size: 13px;
-            font-weight: 700;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 25px;
-            letter-spacing: 1px;
-        }
-
-        .hero h1 {
-            font-size: 46px;
-            margin-bottom: 28px;
-            letter-spacing: -1px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        }
-
-        .hero h1 .en-main {
-            display: block;
-            font-size: 52px;
-            color: #ffffff;
-            font-weight: 900;
-            letter-spacing: 2px;
-            margin-bottom: 5px;
-        }
-
-        .hero h1 .ja-main {
-            display: block;
-            font-size: 34px;
-            color: #ff6b35;
-        }
-
-        .hero p {
-            font-size: 17px;
-            max-width: 850px;
-            margin: 0 auto 45px auto;
-            color: #f0f4f8;
-            font-weight: 400;
-            line-height: 1.8;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
-        }
-
-        .hero p span {
-            display: block;
-            margin-bottom: 12px;
-        }
-
-        .hero p .en-hero-p {
-            font-size: 14px;
-            color: #cbd5e0;
-            font-weight: 300;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #ff6b35;
-            color: #ffffff;
-            padding: 18px 40px;
-            font-size: 16px;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 30px;
-            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
-            transition: all 0.2s ease;
-        }
-
-        .btn:hover {
-            background-color: #e55a2b;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.5);
-        }
-
-        /* --- イントロダクション / Concept Section --- */
-        .concept {
-            padding: 80px 0;
-            background-color: #ffffff;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 28px;
-            margin-bottom: 40px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .section-title::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background-color: #ff6b35;
-            border-radius: 2px;
-        }
-
-        .concept-text {
-            max-width: 850px;
-            margin: 0 auto;
-            font-size: 16px;
-            text-align: left;
-            color: #444444;
-            line-height: 1.8;
-        }
-
-        .concept-block {
-            margin-bottom: 25px;
-        }
-
-        .concept-block .ja-para {
-            color: #222222;
-            font-weight: 500;
-        }
-
-        .concept-block .en-para {
-            color: #666666;
-            font-size: 14px;
-            font-style: italic;
-        }
-
-        /* --- コンテンツカテゴリー / Features --- */
-        .features {
-            padding: 80px 0;
-            background-color: #f0f4f8;
-        }
-
-        .feature-table {
-            display: table;
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 20px;
-        }
-
-        .feature-row {
-            display: table-row;
-        }
-
-        .feature-card {
-            display: table-cell;
-            width: 33.333%;
-            background-color: #ffffff;
-            padding: 35px 25px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-            vertical-align: top;
-            border-top: 5px solid #ff6b35;
-        }
-
-        .feature-card.blue-top {
-            border-top-color: #00b4d8;
-        }
-
-        .feature-card.green-top {
-            border-top-color: #2a9d8f;
-        }
-
-        .icon-box {
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
-
-        .feature-card h3 {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: #1a2a3a;
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 10px;
-        }
-
-        .feature-card ul {
-            list-style: none;
-        }
-
-        .feature-card li {
-            margin-bottom: 25px;
-            font-size: 14px;
-            color: #333333;
-        }
-
-        .feature-card li:last-child {
-            margin-bottom: 0;
-        }
-
-        .feature-card li strong {
-            display: block;
-            font-size: 15px;
-            color: #222222;
-            margin-bottom: 4px;
-        }
-
-        .feature-card li strong span {
-            display: block;
-            font-size: 12px;
-            color: #ff6b35;
-            font-weight: 600;
-        }
-
-        .feature-card.blue-top li strong span {
-            color: #00b4d8;
-        }
-
-        .feature-card.green-top li strong span {
-            color: #2a9d8f;
-        }
-
-        /* 動画プレイヤー設定 */
-        .video-container {
-            width: 100%;
-            margin: 15px 0;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            background-color: #000;
-        }
-
-        .video-container video {
-            width: 100%;
-            display: block;
-        }
-
-        /* アプリリンクボタン */
-        .app-link-btn {
-            display: inline-block;
-            margin-top: 8px;
-            background-color: #1a2a3a;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 8px 16px;
-            font-size: 13px;
-            font-weight: bold;
-            border-radius: 6px;
-            transition: background-color 0.2s;
-        }
-
-        .app-link-btn:hover {
-            background-color: #ff6b35;
-        }
-
-        /* --- 発信内容 / Mission Section --- */
-        .mission {
-            padding: 80px 0;
-            background-color: #ffffff;
-        }
-
-        .mission-list {
-            max-width: 850px;
-            margin: 40px auto 0 auto;
-        }
-
-        .mission-item {
-            display: table;
-            width: 100%;
-            margin-bottom: 25px;
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 8px;
-        }
-
-        .mission-num {
-            display: table-cell;
-            width: 60px;
-            font-size: 24px;
-            font-weight: 800;
-            color: #ff6b35;
-            vertical-align: middle;
-        }
-
-        .mission-content {
-            display: table-cell;
-            vertical-align: middle;
-        }
-
-        .mission-content h4 {
-            font-size: 18px;
-            margin-bottom: 5px;
-            color: #1a2a3a;
-        }
-
-        .mission-content h4 span {
-            font-size: 13px;
-            color: #718096;
-            margin-left: 10px;
-            font-weight: normal;
-        }
-
-        .mission-content p {
-            font-size: 14px;
-            color: #4a5568;
-        }
-
-        /* --- お問い合わせフォーム / Contact Form Section --- */
-        .contact-section {
-            padding: 80px 0;
-            background-color: #f0f4f8;
-        }
-
-        .contact-form {
-            max-width: 650px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            padding: 40px 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 14px;
-            font-weight: bold;
-            color: #1a2a3a;
-            margin-bottom: 8px;
-        }
-
-        .form-group label span {
-            font-size: 12px;
-            color: #e53e3e;
-            margin-left: 6px;
-            background: #fff5f5;
-            padding: 2px 6px;
-            border-radius: 4px;
-        }
-
-        .form-group input[type="text"],
-        .form-group input[type="email"],
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            font-size: 15px;
-            border: 1px solid #cbd5e0;
-            border-radius: 6px;
-            background-color: #f7fafc;
-            color: #222222;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: #ff6b35;
-            background-color: #ffffff;
-        }
-
-        .form-note {
-            font-size: 13px;
-            color: #718096;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-
-        .submit-btn {
-            width: 100%;
-            background-color: #1a2a3a;
-            color: #ffffff;
-            border: none;
-            padding: 14px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-
-        .submit-btn:hover {
-            background-color: #ff6b35;
-        }
-
-        #formResult {
-            margin-top: 20px;
-            padding: 10px;
-            border-radius: 6px;
-            display: none;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        /* --- 注意事項 & 免責事項 / Terms & Disclaimer Section --- */
-        .terms-section {
-            padding: 60px 0;
-            background-color: #ffffff;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        .terms-container {
-            max-width: 850px;
-            margin: 0 auto;
-            text-align: left;
-            font-size: 13px;
-            color: #4a5568;
-            line-height: 1.7;
-        }
-
-        .terms-block {
-            margin-bottom: 25px;
-        }
-
-        .terms-block h4 {
-            font-size: 15px;
-            color: #1a2a3a;
-            margin-bottom: 10px;
-            font-weight: bold;
-            border-left: 3px solid #ff6b35;
-            padding-left: 8px;
-        }
-
-        .terms-block ul {
-            padding-left: 20px;
-            margin-top: 5px;
-        }
-
-        .terms-block li {
-            margin-bottom: 5px;
-        }
-
-        /* --- フッター / Footer --- */
-        footer {
-            background-color: #0d161f;
-            color: #ffffff;
-            padding: 60px 0 40px 0;
-            text-align: center;
-        }
-
-        .footer-cta h2 {
-            font-size: 24px;
-            margin-bottom: 12px;
-            letter-spacing: 1px;
-        }
-
-        .footer-cta h2 span {
-            display: block;
-            font-size: 16px;
-            color: #a0aec0;
-            font-weight: normal;
-            margin-top: 6px;
-        }
-
-        .footer-cta p {
-            color: #ff6b35;
-            margin-bottom: 30px;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        .footer-cta p span {
-            display: block;
-            color: #a0aec0;
-            font-size: 14px;
-            font-weight: normal;
-            margin-top: 6px;
-        }
-
-        .footer-btn-container {
-            margin-bottom: 45px;
-        }
-
-        .footer-app-btn {
-            display: inline-block;
-            color: #ffffff;
-            background-color: #050a0f;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 15px;
-            border: 1px solid rgba(255,255,255,0.18);
-            padding: 12px 36px;
-            border-radius: 25px;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-
-        .footer-app-btn:hover {
-            background-color: #ffffff;
-            color: #050a0f;
-            border-color: #ffffff;
-        }
-
-        .copyright {
-            font-size: 12px;
-            color: #4a5568;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding-top: 20px;
-        }
-
-        /* --- スマートフォン用調整 / Responsive --- */
-        @media (max-width: 768px) {
-            .hero { padding: 100px 0; background-attachment: scroll; }
-            .hero h1 .en-main { font-size: 36px; }
-            .hero h1 .ja-main { font-size: 24px; }
-            .feature-table, .feature-row, .feature-card { display: block; width: 100%; }
-            .feature-card { margin-bottom: 20px; }
-            .contact-form { padding: 25px 20px; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>仮想東海道五十三次ラリー｜歩いて京へ</title>
+<meta name="description" content="日々の散歩の歩数と写真を投稿して、日本橋から京都・三条大橋まで仮想の東海道五十三次を旅するアプリ">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   仮想東海道五十三次ラリー
+   配色: 藍(夜の広重)・和紙・朱印・金茶
+   ============================================================ */
+:root{
+  --ai:        #1c3550;   /* 藍 — 基調 */
+  --ai-fukai:  #12243a;   /* 深藍 */
+  --washi:     #f6f1e4;   /* 和紙 */
+  --washi-kage:#ebe3cf;   /* 和紙の影 */
+  --shu:       #c1432e;   /* 朱 — 印・強調 */
+  --kincha:    #b8913d;   /* 金茶 — 補助 */
+  --sumi:      #2b2722;   /* 墨 — 本文 */
+  --usuzumi:   #6f6655;   /* 薄墨 — 補足文字 */
+  --shiro:     #fdfbf5;
+
+  --font-display:'Shippori Mincho B1', serif;
+  --font-body:'Zen Kaku Gothic New', sans-serif;
+
+  --radius: 10px;
+  --shadow: 0 2px 10px rgba(28,53,80,.12);
+  --step-m: 0.7;          /* 1歩 = 0.7m */
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--font-body);
+  background:var(--washi);
+  color:var(--sumi);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%; display:block;}
+button{font-family:inherit; cursor:pointer;}
+
+:focus-visible{outline:3px solid var(--shu); outline-offset:2px;}
+
+/* ---------- ヘッダー ---------- */
+.site-header{
+  background:
+    linear-gradient(180deg, var(--ai-fukai) 0%, var(--ai) 78%, var(--shu) 78%, var(--shu) 79.5%, var(--ai) 79.5%);
+  color:var(--washi);
+  padding:28px 20px 34px;
+  position:relative;
+  overflow:hidden;
+}
+.site-header::after{ /* 富士の稜線 */
+  content:"";
+  position:absolute; left:-10%; right:-10%; bottom:0; height:46px;
+  background:var(--washi);
+  clip-path:polygon(0 100%, 0 70%, 18% 55%, 33% 78%, 47% 30%, 53% 30%, 62% 72%, 80% 50%, 100% 75%, 100% 100%);
+  opacity:.12;
+  pointer-events:none;
+}
+.header-inner{max-width:1100px; margin:0 auto; position:relative;}
+.eyebrow{
+  font-size:.78rem; letter-spacing:.35em; color:var(--kincha);
+  margin-bottom:6px;
+}
+h1{
+  font-family:var(--font-display);
+  font-weight:800;
+  font-size:clamp(1.5rem, 5vw, 2.3rem);
+  letter-spacing:.08em;
+  line-height:1.3;
+}
+.header-sub{font-size:.88rem; opacity:.85; margin-top:8px; max-width:36em;}
+
+/* ---------- レイアウト ---------- */
+.layout{
+  max-width:1100px;
+  margin:0 auto;
+  padding:20px 16px 60px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:24px;
+}
+
+/* ---------- カード共通 ---------- */
+.card{
+  background:var(--shiro);
+  border:1px solid var(--washi-kage);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:20px;
+}
+.card h2{
+  font-family:var(--font-display);
+  font-size:1.1rem;
+  letter-spacing:.12em;
+  border-bottom:2px solid var(--ai);
+  padding-bottom:8px;
+  margin-bottom:16px;
+  display:flex; align-items:center; gap:8px;
+}
+.card h2::before{
+  content:"";
+  width:10px; height:10px;
+  background:var(--shu);
+  border-radius:2px;
+  transform:rotate(45deg);
+  flex:none;
+}
+
+/* ---------- 進捗サマリー ---------- */
+.now-station{
+  display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+  margin-bottom:4px;
+}
+.now-station .label{font-size:.8rem; color:var(--usuzumi);}
+.now-station .name{
+  font-family:var(--font-display);
+  font-size:clamp(1.7rem, 6vw, 2.4rem);
+  font-weight:800;
+  color:var(--ai);
+  letter-spacing:.06em;
+}
+.now-station .ordinal{font-size:.85rem; color:var(--shu); font-weight:700;}
+.next-info{font-size:.92rem; color:var(--usuzumi); margin-bottom:16px;}
+.next-info strong{color:var(--sumi); font-size:1.05rem;}
+
+.progress-track{
+  position:relative;
+  height:18px;
+  background:var(--washi-kage);
+  border-radius:9px;
+  overflow:hidden;
+}
+.progress-fill{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg, var(--ai) 0%, var(--ai) 70%, var(--shu) 100%);
+  border-radius:9px;
+  transition:width .8s cubic-bezier(.22,1,.36,1);
+}
+.progress-ends{
+  display:flex; justify-content:space-between;
+  font-size:.75rem; color:var(--usuzumi); margin-top:4px;
+}
+.stats-row{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:10px;
+  margin-top:16px;
+}
+.stat{
+  background:var(--washi);
+  border-radius:8px;
+  padding:10px 8px;
+  text-align:center;
+}
+.stat .num{
+  font-family:var(--font-display);
+  font-weight:800;
+  font-size:1.15rem;
+  color:var(--ai);
+  display:block;
+}
+.stat .unit{font-size:.72rem; color:var(--usuzumi);}
+
+/* 京都到達バナー */
+.goal-banner{
+  display:none;
+  margin-top:16px;
+  background:var(--shu);
+  color:var(--shiro);
+  border-radius:8px;
+  padding:14px 16px;
+  font-family:var(--font-display);
+  font-weight:800;
+  letter-spacing:.1em;
+  text-align:center;
+}
+.goal-banner.show{display:block;}
+
+/* ---------- 宿場マップ（街道） ---------- */
+.kaido-card{padding-bottom:8px;}
+.kaido-scroll{
+  max-height:520px;
+  overflow-y:auto;
+  padding:4px 4px 16px;
+}
+.kaido{
+  list-style:none;
+  position:relative;
+  margin-left:14px;
+}
+.kaido::before{ /* 街道の線 */
+  content:"";
+  position:absolute;
+  left:7px; top:10px; bottom:10px;
+  width:3px;
+  background:repeating-linear-gradient(
+    180deg, var(--kincha) 0 8px, transparent 8px 14px);
+  opacity:.6;
+}
+.kaido li{
+  position:relative;
+  padding:5px 8px 5px 32px;
+  font-size:.9rem;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  border-radius:6px;
+}
+.kaido li .dot{
+  position:absolute; left:0; top:50%;
+  transform:translateY(-50%);
+  width:17px; height:17px;
+  border-radius:50%;
+  background:var(--shiro);
+  border:2.5px solid var(--washi-kage);
+  z-index:1;
+}
+.kaido li .km{margin-left:auto; font-size:.74rem; color:var(--usuzumi); flex:none;}
+
+.kaido li.passed{color:var(--usuzumi);}
+.kaido li.passed .dot{
+  background:var(--shu);
+  border-color:var(--shu);
+}
+.kaido li.passed .stamp{
+  font-size:.68rem; color:var(--shu);
+  border:1.5px solid var(--shu);
+  border-radius:4px;
+  padding:0 4px;
+  transform:rotate(-8deg);
+  flex:none;
+  font-weight:700;
+}
+.kaido li.current{
+  background:var(--ai);
+  color:var(--washi);
+  font-weight:700;
+  padding-top:9px; padding-bottom:9px;
+}
+.kaido li.current .dot{
+  background:var(--kincha);
+  border-color:var(--shiro);
+  box-shadow:0 0 0 4px rgba(184,145,61,.35);
+}
+.kaido li.current .km{color:var(--washi); opacity:.8;}
+.kaido li.current .walker{flex:none;}
+
+/* ---------- 投稿フォーム ---------- */
+.form-group{margin-bottom:16px;}
+.form-group label{
+  display:block;
+  font-weight:700;
+  font-size:.9rem;
+  margin-bottom:6px;
+}
+.form-group .hint{font-size:.78rem; color:var(--usuzumi); font-weight:400;}
+input[type="number"], input[type="date"]{
+  width:100%;
+  font-size:1.1rem;
+  font-family:inherit;
+  padding:14px;
+  border:1.5px solid var(--washi-kage);
+  border-radius:8px;
+  background:var(--shiro);
+}
+input[type="number"]:focus, input[type="date"]:focus{
+  border-color:var(--ai);
+  outline:none;
+}
+
+.photo-input{position:absolute; width:1px; height:1px; opacity:0; overflow:hidden;}
+.photo-drop{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  min-height:110px;
+  border:2px dashed var(--kincha);
+  border-radius:8px;
+  background:var(--washi);
+  color:var(--usuzumi);
+  font-size:.9rem;
+  cursor:pointer;
+  text-align:center;
+  padding:12px;
+  transition:background .2s;
+}
+.photo-drop:hover{background:var(--washi-kage);}
+.photo-drop .icon{font-size:1.6rem;}
+.photo-preview{
+  margin-top:10px;
+  display:none;
+  position:relative;
+}
+.photo-preview.show{display:block;}
+.photo-preview img{
+  border-radius:8px;
+  max-height:240px;
+  object-fit:cover;
+  width:100%;
+}
+.photo-preview .remove-photo{
+  position:absolute; top:8px; right:8px;
+  background:rgba(43,39,34,.75);
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  padding:6px 10px;
+  font-size:.8rem;
+}
+
+.submit-btn{
+  width:100%;
+  background:var(--shu);
+  color:var(--shiro);
+  border:none;
+  border-radius:10px;
+  padding:18px;
+  font-size:1.1rem;
+  font-weight:700;
+  font-family:var(--font-display);
+  letter-spacing:.15em;
+  box-shadow:0 3px 0 #8f2f1f;
+  transition:transform .08s, box-shadow .08s;
+}
+.submit-btn:active{transform:translateY(2px); box-shadow:0 1px 0 #8f2f1f;}
+.form-msg{
+  display:none;
+  margin-top:12px;
+  padding:10px 14px;
+  border-radius:8px;
+  font-size:.88rem;
+}
+.form-msg.ok{display:block; background:#e7efe4; color:#2f5d3a;}
+.form-msg.ng{display:block; background:#f7e3df; color:#8f2f1f;}
+
+/* ---------- タイムライン ---------- */
+.timeline-list{display:flex; flex-direction:column; gap:16px;}
+.post-card{
+  border:1px solid var(--washi-kage);
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:var(--shiro);
+  position:relative;
+}
+.post-card img{width:100%; max-height:320px; object-fit:cover;}
+.post-body{padding:12px 16px 14px;}
+.post-meta{
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+  font-size:.82rem; color:var(--usuzumi);
+}
+.post-steps{
+  font-family:var(--font-display);
+  font-weight:800;
+  font-size:1.25rem;
+  color:var(--ai);
+}
+.post-steps small{font-size:.75rem; font-weight:400; color:var(--usuzumi);}
+.post-station{
+  display:inline-block;
+  font-size:.78rem;
+  font-weight:700;
+  color:var(--shu);
+  border:1.5px solid var(--shu);
+  border-radius:4px;
+  padding:1px 8px;
+  transform:rotate(-3deg);
+  background:var(--shiro);
+}
+.post-delete{
+  position:absolute; top:10px; right:10px;
+  background:rgba(43,39,34,.6);
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  padding:5px 9px;
+  font-size:.75rem;
+}
+.post-card.no-photo .post-delete{
+  position:static; margin-left:auto;
+  background:transparent; color:var(--usuzumi);
+  border:1px solid var(--washi-kage);
+}
+.empty-timeline{
+  text-align:center;
+  color:var(--usuzumi);
+  padding:30px 10px;
+  font-size:.92rem;
+}
+.empty-timeline .big{font-size:2rem; display:block; margin-bottom:6px;}
+
+/* ---------- フッター / データ管理 ---------- */
+.data-tools{
+  margin-top:8px;
+  text-align:center;
+}
+.reset-btn{
+  background:transparent;
+  border:1px solid var(--washi-kage);
+  color:var(--usuzumi);
+  border-radius:8px;
+  padding:8px 16px;
+  font-size:.8rem;
+}
+.reset-btn:hover{border-color:var(--shu); color:var(--shu);}
+.site-footer{
+  text-align:center;
+  font-size:.75rem;
+  color:var(--usuzumi);
+  padding:20px 16px 40px;
+}
+
+/* ============================================================
+   PCレイアウト（2カラム）: 左=街道マップ / 右=投稿・タイムライン
+   ============================================================ */
+@media (min-width: 900px){
+  .layout{
+    grid-template-columns: 400px 1fr;
+    gap:28px;
+    padding-top:28px;
+    align-items:start;
+  }
+  .col-left{
+    position:sticky;
+    top:20px;
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+  }
+  .col-right{display:flex; flex-direction:column; gap:24px;}
+  .kaido-scroll{max-height:calc(100vh - 420px); min-height:260px;}
+  .submit-btn{padding:15px;}
+  /* PCでは折りたたみを常時展開 */
+  details.kaido-card{padding-bottom:8px;}
+  details.kaido-card > summary{pointer-events:none; list-style:none;}
+  details.kaido-card > summary::-webkit-details-marker{display:none;}
+}
+@media (max-width: 899px){
+  .col-left, .col-right{display:contents;} /* 縦一列に流す */
+  .order-1{order:1;} .order-2{order:2;} .order-3{order:3;} .order-4{order:4;}
+  details.kaido-card > summary{
+    cursor:pointer;
+    font-family:var(--font-display);
+    font-size:1.05rem;
+    letter-spacing:.1em;
+    font-weight:800;
+    display:flex; align-items:center; gap:8px;
+  }
+  details.kaido-card > summary::before{
+    content:"";
+    width:10px; height:10px;
+    background:var(--shu);
+    border-radius:2px;
+    transform:rotate(45deg);
+  }
+  details.kaido-card[open] > summary{margin-bottom:14px;}
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{transition:none !important; animation:none !important;}
+  html{scroll-behavior:auto;}
+}
+</style>
 </head>
 <body>
 
-    <!-- ナビゲーションバー / Navigation Bar -->
-    <header>
-        <div class="container">
-            <div class="nav-container">
-                <div class="logo"><span>My 60s, My Rules</span> ６０代はやりたい放題</div>
-            </div>
-        </div>
-    </header>
+<header class="site-header">
+  <div class="header-inner">
+    <p class="eyebrow">あるいて京へ — 歩数で旅する</p>
+    <h1>仮想 東海道五十三次ラリー</h1>
+    <p class="header-sub">日々の散歩の歩数と一枚の写真を投稿すると、日本橋から京・三条大橋までの約492kmを少しずつ進みます。1歩＝0.7mで換算。</p>
+  </div>
+</header>
 
-    <!-- ヒーロービュー / Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-badge">人生の本番は、60代から。 / The real show starts in your 60s.</div>
-            <h1>
-                <span class="en-main">My 60s, My Rules</span>
-                <span class="ja-main">６０代はやりたい放題</span>
-            </h1>
-            <p>
-                <span>退職、ひと段落、そこからが本当の自由時間。プログラミングによるアンケートアプリやバーチャルタウンの開発から、ダンスにキャンプ、世界を広げる旅まで。「今が一番忙しくて、今が一番楽しい！」そんな大人たちのための遊び場へようこそ。</span>
-                <span class="en-hero-p">Retirement is just the closing of one chapter and the grand opening of true freedom. From coding questionnaire web apps and virtual towns to social dancing, camping, and cross-country cycling—welcome to the ultimate playground for adults who believe life is busiest and most beautiful right now.</span>
-            </p>
-            <a href="#content" class="btn">最新の「やりたい放題」を覗いてみる / See My Latest Adventures</a>
-        </div>
+<main class="layout">
+
+  <!-- ===== 左カラム（PC）/ 上部（スマホ） ===== -->
+  <div class="col-left">
+
+    <!-- 進捗サマリー -->
+    <section class="card order-1" aria-label="現在の進捗">
+      <h2>道中記</h2>
+      <div class="now-station">
+        <span class="label">現在地</span>
+        <span class="name" id="currentStationName">日本橋</span>
+        <span class="ordinal" id="currentStationOrdinal">出発地</span>
+      </div>
+      <p class="next-info" id="nextInfo">次の宿場「品川」まで あと <strong>--</strong></p>
+
+      <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressTrack">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="progress-ends"><span>日本橋</span><span id="progressPct">0%</span><span>京・三条大橋</span></div>
+
+      <div class="stats-row">
+        <div class="stat"><span class="num" id="statSteps">0</span><span class="unit">累計歩数</span></div>
+        <div class="stat"><span class="num" id="statKm">0.0</span><span class="unit">累計 km</span></div>
+        <div class="stat"><span class="num" id="statStations">0<small>/53</small></span><span class="unit">通過宿場</span></div>
+      </div>
+
+      <div class="goal-banner" id="goalBanner">祝・京三条大橋 御到着 ── 五十三次 満願成就</div>
     </section>
 
-    <!-- コンセプト / Concept -->
-    <section class="concept">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="en-sub-title">The Philosophy</span>
-                「もう60代」じゃない。「いよいよ60代」だ！
-                <span class="en-text">Not "Already 60", but "Finally 60!"</span>
-            </h2>
-            <div class="concept-text">
-                <div class="concept-block">
-                    <p class="ja-para">「年齢を理由に諦めるなんて、もったいない。」</p>
-                    <p class="en-para">"Giving up on something just because of your age is a total waste."</p>
-                </div>
-                <div class="concept-block">
-                    <p class="ja-para">現役時代には時間がなくてできなかったこと、新しく触れるデジタルテクノロジー、身体を動かす快感。今の60代は、守りに入るには早すぎます。</p>
-                    <p class="en-para">Things we couldn't do before due to lack of time, diving into brand-new digital tech, and the pure joy of keeping active. It is far too early for today's 60s to play it safe.</p>
-                </div>
-                <div class="concept-block">
-                    <p class="ja-para">画面に向かってプログラミングのコードを書き換え、自作アプリやバーチャル空間を形にしたその足で、ステップを踏みに出かける。自由な発想をすべてカタチにする、それが私たちのスタイルです。</p>
-                    <p class="en-para">We rewrite lines of programming code to build our own web apps and virtual spaces, then immediately head out to practice dance steps. Bringing every creative spark to life—that is our rule.</p>
-                </div>
-            </div>
+    <!-- 街道マップ（スマホでは折りたたみ） -->
+    <details class="card kaido-card order-3" id="kaidoDetails">
+      <summary><span>五十三次 街道図</span></summary>
+      <div class="kaido-scroll">
+        <ol class="kaido" id="kaidoList"><!-- JSで生成 --></ol>
+      </div>
+    </details>
+
+  </div>
+
+  <!-- ===== 右カラム（PC）/ 下部（スマホ） ===== -->
+  <div class="col-right">
+
+    <!-- 投稿フォーム -->
+    <section class="card order-2" aria-label="歩数と写真の投稿">
+      <h2>本日の歩みを記す</h2>
+      <form id="postForm" novalidate>
+        <div class="form-group">
+          <label for="stepsInput">歩数 <span class="hint">（万歩計・スマホの数値）</span></label>
+          <input type="number" id="stepsInput" inputmode="numeric" min="1" max="200000" step="1" placeholder="例：8500" required>
         </div>
+
+        <div class="form-group">
+          <label for="dateInput">日付</label>
+          <input type="date" id="dateInput">
+        </div>
+
+        <div class="form-group">
+          <label for="photoInput">道中の一枚 <span class="hint">（任意・カメラ起動可）</span></label>
+          <input class="photo-input" type="file" id="photoInput" accept="image/*" capture="environment">
+          <label class="photo-drop" for="photoInput" id="photoDrop">
+            <span class="icon" aria-hidden="true">📷</span>
+            <span>タップして撮影 / 写真を選択</span>
+          </label>
+          <div class="photo-preview" id="photoPreview">
+            <img id="previewImg" alt="選択した写真のプレビュー">
+            <button type="button" class="remove-photo" id="removePhotoBtn">写真を外す</button>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">投稿して進む</button>
+        <p class="form-msg" id="formMsg" role="status"></p>
+      </form>
     </section>
 
-    <!-- 活動内容紹介 / Features -->
-    <section class="features" id="content">
-        <div class="container">
-            <h2 class="section-title" style="text-align: center;">
-                <span class="en-sub-title">What I Do</span>
-                広がっていく、大人の遊び場
-                <span class="en-text">An Expanding Playground for Adults</span>
-            </h2>
-            
-            <div class="feature-table">
-                <div class="feature-row">
-                    <!-- カード 1：テック＆クリエイティブ -->
-                    <div class="feature-card">
-                        <div class="icon-box">💻</div>
-                        <h3>TECH & CREATIVE</h3>
-                        <ul>
-                            <li>
-                                <strong>プログラミング & アプリ開発<span>Programming & App Development</span></strong>
-                                頭をフル回転させて、仕組みをゼロから構築する。Webアンケートアプリのほか、チャットや通話で繋がれる魅力的なバーチャルタウンアプリなども開発しています。
-                                
-                                <!-- アプリ紹介動画プレイヤー -->
-                                <div class="video-container">
-                                    <video src="app-video.mp4" controls preload="metadata" playsinline></video>
-                                </div>
-
-                                <a href="https://kenken6291.github.io/apri-anketo/" target="_blank" class="app-link-btn">アンケートアプリを見る / View Questionnaire App →</a>
-                                <span class="en-text">Keeping the brain wired by building systems from scratch. I create functional web apps such as online questionnaires and immersive virtual town communication apps.</span>
-                            </li>
-                            <li>
-                                <strong>「10年日記」登場<span>Introducing "10-Year Diary"</span></strong>
-                                同じ日の記録を10年分1ページに残せる日記コミュニティアプリが新登場。写真アップロードや「年表」機能も追加し、日々の積み重ねをより楽しく記録できます。
-
-                                <!-- 10年日記 紹介動画プレイヤー -->
-                                <div class="video-container">
-                                    <video src="diary-video.mp4" controls preload="metadata" playsinline></video>
-                                </div>
-
-                                <a href="https://kenken6291.github.io/10y-nikki/" target="_blank" class="app-link-btn">10年日記を見る / View 10-Year Diary →</a>
-                                <span class="en-text">Introducing a new diary community app that keeps ten years of entries for the same date on a single page. With photo uploads and a "Timeline" feature, it makes recording daily life even more rewarding.</span>
-                            </li>
-                            <li>
-                                <strong>「アーケードゲーム、ボードゲーム勢ぞろい」登場<span>Arcade & Board Games, All Together</span></strong>
-                                インベーダーやテトリス、パックマンなどのレトロアーケードから、将棋・囲碁・麻雀・オセロといったボードゲームまで、自作ゲームが一堂に会するゲームセンターが登場。懐かしさと本気の対戦、両方楽しめます。
-
-                                <!-- アーケード＆ボードゲーム紹介動画プレイヤー -->
-                                <div class="video-container">
-                                    <video src="arcade-games-video.mp4" controls preload="metadata" playsinline></video>
-                                </div>
-
-                                <a href="https://kenken6291.github.io/retro-arcade-hub/" target="_blank" class="app-link-btn">ゲームセンターを見る / View Game Center →</a>
-                                <span class="en-text">A game center bringing together everything from retro arcade classics like Invaders, Tetris, and Pac-Man to board games such as Shogi, Go, Mahjong, and Othello. Enjoy both nostalgia and serious head-to-head play.</span>
-                            </li>
-                            <li>
-                                <strong>「バーチャル試着アプリ」登場<span>Introducing "Virtual Try-On App"</span></strong>
-                                正面と横からの写真をアップロードするだけで、AIが試着姿を作成。気になる服を実際に着る前に、自分らしいコーディネートをイメージできます。
-
-                                <!-- バーチャル試着アプリ 紹介動画プレイヤー -->
-                                <div class="video-container">
-                                    <video src="tryon-video.mp4" controls preload="metadata" playsinline></video>
-                                </div>
-
-                                <a href="https://script.google.com/macros/s/AKfycby3NPPssi18u5jbB73-Sus5s70ujnWRYGSi92FPJv5HSOwtYDMH7kr89pOYpae0cjfNcA/exec" target="_blank" class="app-link-btn">バーチャル試着アプリを見る / View Virtual Try-On App →</a>
-                                <span class="en-text">Just upload front and side photos, and AI generates a try-on image. See how an outfit really looks on you before you buy.</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- カード 2：アクティビティ -->
-                    <div class="feature-card blue-top">
-                        <div class="icon-box">🕺</div>
-                        <h3>MOVE & GROOVE</h3>
-                        <ul>
-                            <li>
-                                <strong>ソーシャルダンス<span>Social Dancing</span></strong>
-                                音楽に身をまかせ、リズムと一体になる時間。心も身体も、20代の頃より弾んでいるかもしれない。
-                                <span class="en-text">Losing oneself in the rhythm and the music. Both heart and body feel more vibrant and light than ever before.</span>
-                            </li>
-                            <li>
-                                <strong>大人の卓球<span>Table Tennis Circle</span></strong>
-                                一球に集中する快感と、仲間との心地よいラリー。地域のコミュニティを超えて、本気で楽しむ大人の部活。
-                                <span class="en-text">The rush of intense focus on a single ball and great rallies with friends. An adult sports club that goes beyond local circles.</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- カード 3：アウトドア -->
-                    <div class="feature-card green-top">
-                        <div class="icon-box">🗺️</div>
-                        <h3>TRAVEL & OUTDOOR</h3>
-                        <ul>
-                            <li>
-                                <strong>キャンピングカー旅<span>Camper Van Life</span></strong>
-                                愛車が動く秘密基地。思い立ったが吉日、日本全国どこでもマイルームにしてしまう究極の自由空間。
-                                <span class="en-text">A mobile base of operations. Spontaneous journeys turn any corner of the country into a personal living room with ultimate freedom.</span>
-                            </li>
-                            <li>
-                                <strong>自転車旅 & キャンプ<span>Cycling & Camping</span></strong>
-                                風を肌で感じながらペダルを漕ぎ、夜は満天の星空の下で火を囲む。五感をフルに解放する旅。
-                                <span class="en-text">Feeling the wind while pedaling through scenic routes and gathering around a campfire under a starry sky. A journey that awakens all five senses.</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+    <!-- タイムライン -->
+    <section class="card order-4" aria-label="投稿タイムライン">
+      <h2>旅の絵巻（タイムライン）</h2>
+      <div class="timeline-list" id="timelineList"></div>
+      <div class="data-tools">
+        <button type="button" class="reset-btn" id="resetBtn">記録をすべて消去（最初からやり直す）</button>
+      </div>
     </section>
 
-    <!-- 発信内容 / Topics -->
-    <section class="mission">
-        <div class="container">
-            <h2 class="section-title" style="text-align: center;">
-                <span class="en-sub-title">What's Next</span>
-                本サイトで発信していくこと
-                <span class="en-text">What I Share Here</span>
-            </h2>
-            
-            <div class="mission-list">
-                <div class="mission-item">
-                    <div class="mission-num">01</div>
-                    <div class="mission-content">
-                        <h4>リアルな実践レビュー <span>Real Reviews & Progress</span></h4>
-                        <p>「独学から始めるプログラミングの進捗」や「新機能の実装の裏側」を包み隠さずシェアします。</p>
-                        <p class="en-text">Sharing the transparent journey of coding progress, learning app frameworks, and the behind-the-scenes of deploying applications.</p>
-                    </div>
-                </div>
-                
-                <div class="mission-item">
-                    <div class="mission-num">02</div>
-                    <div class="mission-content">
-                        <h4>大人のガジェット＆ギア紹介 <span>Gadgets & Gear Guide</span></h4>
-                        <p>キャンピングカーの快適化、開発に使う機材、旅の相棒となる自転車など、こだわりの道具たちを徹底解剖します。</p>
-                        <p class="en-text">Deep dives into essential gear, from camper van customization ideas and coding equipment to our trusted travel bicycles.</p>
-                    </div>
-                </div>
+  </div>
+</main>
 
-                <div class="mission-item">
-                    <div class="mission-num">03</div>
-                    <div class="mission-content">
-                        <h4>「一歩」を踏み出すヒント <span>Tips for a Bold Start</span></h4>
-                        <p>60代から新しい技術、趣味、コミュニティを始めるときに、ちょっと役立つノウハウやマインドセットをお届けします。</p>
-                        <p class="en-text">Providing practical advice, mindsets, and encouragement for fellow adults looking to embrace new technologies, hobbies, and communities late in life.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<footer class="site-footer">
+  <p>記録はお使いのブラウザ（LocalStorage）にのみ保存されます。サーバーへの送信はありません。</p>
+  <p>距離は概算値です。1歩＝0.7mで換算しています。</p>
+</footer>
 
-    <!-- お問い合わせセクション（セキュリティ強化版） / Contact Section -->
-    <section class="contact-section">
-        <div class="container">
-            <h2 class="section-title" style="text-align: center;">
-                <span class="en-sub-title">Contact</span>
-                お問い合わせ
-                <span class="en-text">Get in Touch</span>
-            </h2>
-            
-            <!-- ⚠️ ここにGASのウェブアプリURLを貼り付けてください -->
-            <form class="contact-form" id="secureContactForm" action="https://script.google.com/macros/s/AKfycbwfWMcpAj1tn32mE3EsxFGu5XHKWleQjKlFc06M5c4WyHGuCliQTar4y-8beLslNTHyZA/exec" method="POST">
-                
-                <!-- スパム対策：ハニーポット（人間には見えない隠しフィールド） -->
-                <div style="display:none;">
-                    <label>Leave this field blank</label>
-                    <input type="text" name="honeypot_field" id="honeypotField" autocomplete="off">
-                </div>
+<script>
+"use strict";
 
-                <div class="form-group">
-                    <label for="name">お名前 / Name <span>必須</span></label>
-                    <input type="text" id="name" name="name" placeholder="山田 太郎" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">メールアドレス / Email <span>必須</span></label>
-                    <input type="email" id="email" name="email" placeholder="example@email.com" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">メッセージ / Message <span>必須</span></label>
-                    <textarea id="message" name="message" rows="6" placeholder="お問い合わせ内容やご意見をご記入ください。" required></textarea>
-                </div>
-                
-                <div class="form-note">
-                    ※回答は上記にご入力いただいたメールアドレス宛にお送りいたします。アドレスに誤りがあると返信が届きませんのでご注意ください。
-                    <br>
-                    <span style="font-size: 11px; display:block; margin-top:5px;">*Replies will be sent to the email address provided above. Please ensure it is typed correctly.</span>
-                </div>
-                
-                <button type="submit" id="submitBtn" class="submit-btn">送信する / Send Message</button>
-                
-                <div id="formResult"></div>
-            </form>
-        </div>
-    </section>
+/* ============================================================
+   宿場データ（日本橋からの累計概算km）
+   index 0 = 日本橋（出発地）, 1〜53 = 五十三次, 54 = 京・三条大橋
+   ============================================================ */
+const STATIONS = [
+  {name:"日本橋",     km:0},
+  {name:"品川",       km:7.9},
+  {name:"川崎",       km:17.7},
+  {name:"神奈川",     km:27.5},
+  {name:"保土ヶ谷",   km:32.4},
+  {name:"戸塚",       km:41.2},
+  {name:"藤沢",       km:49.1},
+  {name:"平塚",       km:62.8},
+  {name:"大磯",       km:65.9},
+  {name:"小田原",     km:81.8},
+  {name:"箱根",       km:98.3},
+  {name:"三島",       km:113.0},
+  {name:"沼津",       km:118.9},
+  {name:"原",         km:124.8},
+  {name:"吉原",       km:136.5},
+  {name:"蒲原",       km:147.7},
+  {name:"由比",       km:151.6},
+  {name:"興津",       km:160.8},
+  {name:"江尻",       km:165.2},
+  {name:"府中",       km:175.6},
+  {name:"鞠子",       km:181.4},
+  {name:"岡部",       km:189.3},
+  {name:"藤枝",       km:196.1},
+  {name:"島田",       km:204.9},
+  {name:"金谷",       km:208.8},
+  {name:"日坂",       km:215.3},
+  {name:"掛川",       km:222.4},
+  {name:"袋井",       km:232.0},
+  {name:"見付",       km:238.0},
+  {name:"浜松",       km:254.4},
+  {name:"舞坂",       km:265.4},
+  {name:"新居",       km:271.2},
+  {name:"白須賀",     km:277.7},
+  {name:"二川",       km:283.6},
+  {name:"吉田",       km:289.8},
+  {name:"御油",       km:300.1},
+  {name:"赤坂",       km:301.8},
+  {name:"藤川",       km:310.6},
+  {name:"岡崎",       km:317.3},
+  {name:"池鯉鮒",     km:332.4},
+  {name:"鳴海",       km:343.3},
+  {name:"宮",         km:349.9},
+  {name:"桑名",       km:377.4},
+  {name:"四日市",     km:390.1},
+  {name:"石薬師",     km:400.8},
+  {name:"庄野",       km:403.6},
+  {name:"亀山",       km:411.5},
+  {name:"関",         km:417.4},
+  {name:"坂下",       km:424.0},
+  {name:"土山",       km:433.8},
+  {name:"水口",       km:444.6},
+  {name:"石部",       km:458.2},
+  {name:"草津",       km:469.9},
+  {name:"大津",       km:484.3},
+  {name:"京・三条大橋", km:492.1}
+];
+const TOTAL_KM   = STATIONS[STATIONS.length - 1].km;
+const STEP_M     = 0.7;                      // 1歩 = 0.7m
+const STORAGE_KEY = "tokaido53_posts_v1";
 
-    <!-- 注意事項 & 免責事項 / Terms & Disclaimer -->
-    <section class="terms-section">
-        <div class="container">
-            <div class="terms-container">
-                <div class="terms-block">
-                    <h4>注意事項 / Important Notes</h4>
-                    <p>当サイトおよび公開している各種アプリケーション（以下、当サービス）は、個人の趣味の延長として、完全無料およびボランティア形式で運営・管理を行っております。そのため、お問い合わせに対するメールでのご回答には、数日〜お時間をいただく場合がございます。また、すべてのご意見・お問い合わせに対して必ずしも個別のご返信をお約束するものではございませんことを、あらかじめご了承ください。</p>
-                </div>
-                
-                <div class="terms-block">
-                    <h4>免責事項 / Disclaimer</h4>
-                    <ul>
-                        <li>当サービスで提供する情報や、プログラム・アプリの動作状況については細心の注意を払っておりますが、その完全性、正確性、有用性、および安全性について明示的にも黙示的にもいかなる保証もいたしません。</li>
-                        <li>当サービスのご利用、または何らかの理由により利用できなかったことによって生じたトラブル、損害（直接的・間接的を問わず）について、運営者は一切の責任を負いかねます。</li>
-                        <li>当サービスは、予告なしに内容の変更、追加、または提供の変更・中止を行うことがあります。あらかじめご了承ください。</li>
-                    </ul>
-                </div>
-                
-                <div class="terms-block">
-                    <p style="font-size: 11px; color:#a0aec0; font-style: italic;">
-                        *This website and its apps are operated completely free of charge as a personal, voluntary hobby. Please understand that replies to inquiries may take time, and individual responses cannot always be guaranteed. The operator holds no liability for any issues or damages arising from the use of this service.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+/* ============================================================
+   データ層（LocalStorage）
+   ============================================================ */
+function loadPosts(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    const arr = raw ? JSON.parse(raw) : [];
+    return Array.isArray(arr) ? arr : [];
+  }catch(e){
+    console.warn("読み込みに失敗:", e);
+    return [];
+  }
+}
+function savePosts(posts){
+  try{
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(posts));
+    return true;
+  }catch(e){
+    console.warn("保存に失敗:", e);
+    return false;
+  }
+}
 
-    <!-- フッター / Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-cta">
-                <h2>やりたいこと、まだ半分もやれてない。
-                    <span>I haven't even done half of what I want to do yet.</span>
-                </h2>
-                <p>さあ、あなたは何から「放題」にしますか？
-                    <span>So, which rule are you going to rewrite first?</span>
-                </p>
-            </div>
-            
-            <div class="footer-btn-container">
-                <a href="https://kenken6291.github.io/apri-anketo/" target="_blank" class="footer-app-btn">プログラミング / Programming</a>
-            </div>
-            
-            <div class="copyright">
-                &copy; 2026 My 60s, My Rules. All Rights Reserved.
-            </div>
-        </div>
-    </footer>
+let posts = loadPosts();
 
-    <!-- セキュリティ制御用 JavaScript -->
-    <script>
-        document.getElementById('secureContactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); 
-            
-            var form = this;
-            var submitBtn = document.getElementById('submitBtn');
-            var resultDiv = document.getElementById('formResult');
-            var honeypot = document.getElementById('honeypotField').value;
-            
-            if (honeypot !== "") {
-                console.warn("Spam detected.");
-                return; 
-            }
-            
-            submitBtn.disabled = true;
-            submitBtn.innerText = "送信中... / Sending...";
-            submitBtn.style.backgroundColor = "#718096";
-            
-            var formData = new FormData(form);
-            
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                mode: 'no-cors' 
-            })
-            .then(function() {
-                resultDiv.style.display = "block";
-                resultDiv.style.backgroundColor = "#c6f6d5";
-                resultDiv.style.color = "#22543d";
-                resultDiv.innerText = "お問い合わせを送信しました。ありがとうございました。 / Message sent successfully. Thank you!";
-                
-                form.reset(); 
-                submitBtn.innerText = "送信完了 / Completed";
-            })
-            .catch(function(error) {
-                resultDiv.style.display = "block";
-                resultDiv.style.backgroundColor = "#fed7d7";
-                resultDiv.style.color = "#742a2a";
-                resultDiv.innerText = "送信エラーが発生しました。しばらく経ってから再度お試しください。 / Error occurred. Please try again later.";
-                
-                submitBtn.disabled = false;
-                submitBtn.innerText = "送信する / Send Message";
-                submitBtn.style.backgroundColor = "#1a2a3a";
-            });
-        });
-    </script>
+/* ============================================================
+   進捗計算
+   ============================================================ */
+function totalSteps(){ return posts.reduce((s,p)=> s + (p.steps||0), 0); }
+function stepsToKm(steps){ return steps * STEP_M / 1000; }
+function kmToSteps(km){ return Math.ceil(km * 1000 / STEP_M); }
+
+/** 累計kmから「現在の宿場index」を返す（その宿場に到達済みの最後のindex） */
+function stationIndexAt(km){
+  let idx = 0;
+  for(let i = 0; i < STATIONS.length; i++){
+    if(km >= STATIONS[i].km) idx = i;
+  }
+  return idx;
+}
+
+/* ============================================================
+   画像圧縮（長辺900px / JPEG 70%）→ dataURL
+   LocalStorage容量（約5MB）対策
+   ============================================================ */
+function compressImage(file){
+  return new Promise((resolve, reject)=>{
+    const reader = new FileReader();
+    reader.onerror = ()=> reject(new Error("ファイルを読めませんでした"));
+    reader.onload = ()=>{
+      const img = new Image();
+      img.onerror = ()=> reject(new Error("画像として読み込めませんでした"));
+      img.onload = ()=>{
+        const MAX = 900;
+        let {width:w, height:h} = img;
+        if(Math.max(w,h) > MAX){
+          const r = MAX / Math.max(w,h);
+          w = Math.round(w*r); h = Math.round(h*r);
+        }
+        const canvas = document.createElement("canvas");
+        canvas.width = w; canvas.height = h;
+        canvas.getContext("2d").drawImage(img, 0, 0, w, h);
+        resolve(canvas.toDataURL("image/jpeg", 0.7));
+      };
+      img.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+/* ============================================================
+   描画
+   ============================================================ */
+const $ = (id)=> document.getElementById(id);
+
+function fmt(n){ return n.toLocaleString("ja-JP"); }
+
+function ordinalLabel(idx){
+  if(idx === 0) return "出発地";
+  if(idx === STATIONS.length - 1) return "終着・満願";
+  return `第${idx}宿`;
+}
+
+function renderProgress(){
+  const steps = totalSteps();
+  const km    = Math.min(stepsToKm(steps), TOTAL_KM);
+  const idx   = stationIndexAt(km);
+  const cur   = STATIONS[idx];
+  const goal  = idx >= STATIONS.length - 1;
+
+  $("currentStationName").textContent    = cur.name;
+  $("currentStationOrdinal").textContent = ordinalLabel(idx);
+
+  if(goal){
+    $("nextInfo").innerHTML = "全宿場を踏破しました。お疲れさまでした！";
+  }else{
+    const next   = STATIONS[idx + 1];
+    const remKm  = next.km - km;
+    const remStp = kmToSteps(remKm);
+    $("nextInfo").innerHTML =
+      `次の宿場「${next.name}」まで あと <strong>${fmt(remStp)}歩</strong>（約${remKm.toFixed(1)}km）`;
+  }
+
+  const pct = Math.min(100, km / TOTAL_KM * 100);
+  $("progressFill").style.width = pct + "%";
+  $("progressPct").textContent  = pct.toFixed(1) + "%";
+  $("progressTrack").setAttribute("aria-valuenow", pct.toFixed(1));
+
+  $("statSteps").textContent = fmt(steps);
+  $("statKm").textContent    = km.toFixed(1);
+  // 通過宿場数（品川〜大津の53宿のうち到達した数）
+  const passedShuku = Math.max(0, Math.min(53, idx));
+  $("statStations").innerHTML = `${passedShuku}<small>/53</small>`;
+
+  $("goalBanner").classList.toggle("show", goal);
+}
+
+function renderKaido(){
+  const km  = Math.min(stepsToKm(totalSteps()), TOTAL_KM);
+  const idx = stationIndexAt(km);
+  const ol  = $("kaidoList");
+  ol.innerHTML = "";
+
+  STATIONS.forEach((st, i)=>{
+    const li = document.createElement("li");
+    const state = (i < idx) ? "passed" : (i === idx) ? "current" : "future";
+    li.className = state;
+
+    const dot = document.createElement("span");
+    dot.className = "dot"; dot.setAttribute("aria-hidden","true");
+    li.appendChild(dot);
+
+    const name = document.createElement("span");
+    name.textContent = (i === 0 || i === STATIONS.length-1) ? st.name : `${st.name}宿`;
+    li.appendChild(name);
+
+    if(state === "current"){
+      const walker = document.createElement("span");
+      walker.className = "walker"; walker.textContent = "🚶";
+      walker.setAttribute("aria-label","現在地");
+      li.appendChild(walker);
+    }
+    if(state === "passed"){
+      const stamp = document.createElement("span");
+      stamp.className = "stamp"; stamp.textContent = "通過";
+      li.appendChild(stamp);
+    }
+
+    const kmEl = document.createElement("span");
+    kmEl.className = "km"; kmEl.textContent = st.km.toFixed(1) + "km";
+    li.appendChild(kmEl);
+
+    ol.appendChild(li);
+  });
+
+  // 現在地を見える位置へ
+  const curEl = ol.querySelector(".current");
+  if(curEl && window.matchMedia("(min-width:900px)").matches){
+    curEl.scrollIntoView({block:"center", behavior:"instant"});
+  }
+}
+
+function renderTimeline(){
+  const list = $("timelineList");
+  list.innerHTML = "";
+
+  if(posts.length === 0){
+    list.innerHTML =
+      `<div class="empty-timeline"><span class="big">🌅</span>まだ記録がありません。<br>最初の一歩を投稿して、日本橋を出立しましょう。</div>`;
+    return;
+  }
+
+  // 新しい順
+  [...posts].sort((a,b)=> b.createdAt - a.createdAt).forEach(p=>{
+    const card = document.createElement("article");
+    card.className = "post-card" + (p.photo ? "" : " no-photo");
+
+    if(p.photo){
+      const img = document.createElement("img");
+      img.src = p.photo;
+      img.alt = `${p.date} の道中写真`;
+      img.loading = "lazy";
+      card.appendChild(img);
+    }
+
+    const body = document.createElement("div");
+    body.className = "post-body";
+
+    const stepsEl = document.createElement("p");
+    stepsEl.className = "post-steps";
+    stepsEl.innerHTML = `${fmt(p.steps)}<small> 歩（約${stepsToKm(p.steps).toFixed(1)}km）</small>`;
+    body.appendChild(stepsEl);
+
+    const meta = document.createElement("p");
+    meta.className = "post-meta";
+    const station = document.createElement("span");
+    station.className = "post-station";
+    station.textContent = p.station + " にて";
+    const date = document.createElement("span");
+    date.textContent = p.date;
+    meta.appendChild(station);
+    meta.appendChild(date);
+
+    const del = document.createElement("button");
+    del.type = "button";
+    del.className = "post-delete";
+    del.textContent = "削除";
+    del.addEventListener("click", ()=> deletePost(p.id));
+    if(p.photo){ card.appendChild(del); } else { meta.appendChild(del); }
+
+    body.appendChild(meta);
+    card.appendChild(body);
+    list.appendChild(card);
+  });
+}
+
+function renderAll(){
+  renderProgress();
+  renderKaido();
+  renderTimeline();
+}
+
+/* ============================================================
+   操作
+   ============================================================ */
+function deletePost(id){
+  if(!confirm("この記録を削除しますか？（歩数も差し引かれます）")) return;
+  posts = posts.filter(p=> p.id !== id);
+  savePosts(posts);
+  renderAll();
+}
+
+function showMsg(text, ok){
+  const el = $("formMsg");
+  el.textContent = text;
+  el.className = "form-msg " + (ok ? "ok" : "ng");
+  clearTimeout(showMsg._t);
+  showMsg._t = setTimeout(()=>{ el.className = "form-msg"; }, 5000);
+}
+
+/* ---------- 写真プレビュー ---------- */
+let pendingPhoto = null; // 圧縮済みdataURL
+
+$("photoInput").addEventListener("change", async (e)=>{
+  const file = e.target.files && e.target.files[0];
+  if(!file) return;
+  if(!file.type.startsWith("image/")){
+    showMsg("画像ファイルを選択してください。", false);
+    e.target.value = "";
+    return;
+  }
+  try{
+    pendingPhoto = await compressImage(file);
+    $("previewImg").src = pendingPhoto;
+    $("photoPreview").classList.add("show");
+    $("photoDrop").style.display = "none";
+  }catch(err){
+    pendingPhoto = null;
+    showMsg("写真の読み込みに失敗しました：" + err.message, false);
+  }
+});
+
+$("removePhotoBtn").addEventListener("click", ()=>{
+  pendingPhoto = null;
+  $("photoInput").value = "";
+  $("photoPreview").classList.remove("show");
+  $("photoDrop").style.display = "";
+});
+
+/* ---------- 投稿 ---------- */
+$("postForm").addEventListener("submit", (e)=>{
+  e.preventDefault();
+  const steps = parseInt($("stepsInput").value, 10);
+  if(!Number.isFinite(steps) || steps < 1){
+    showMsg("歩数を1以上の数値で入力してください。", false);
+    return;
+  }
+  if(steps > 200000){
+    showMsg("歩数が大きすぎます（上限200,000歩）。", false);
+    return;
+  }
+
+  const dateVal = $("dateInput").value || new Date().toISOString().slice(0,10);
+
+  // 投稿後の累計から「この投稿で到達した宿場」を算出
+  const newTotalKm = Math.min(stepsToKm(totalSteps() + steps), TOTAL_KM);
+  const stationName = STATIONS[stationIndexAt(newTotalKm)].name;
+
+  const post = {
+    id: Date.now().toString(36) + Math.random().toString(36).slice(2,7),
+    createdAt: Date.now(),
+    date: dateVal,
+    steps: steps,
+    station: stationName,
+    photo: pendingPhoto
+  };
+
+  posts.push(post);
+  if(!savePosts(posts)){
+    // 容量超過 → 写真なしで再試行
+    post.photo = null;
+    if(savePosts(posts)){
+      showMsg("保存容量の上限のため、写真なしで記録しました（歩数は反映済み）。", false);
+    }else{
+      posts.pop();
+      showMsg("保存に失敗しました。古い記録を削除してから再度お試しください。", false);
+      return;
+    }
+  }else{
+    showMsg(`記録しました！ 現在「${stationName}」を歩いています。`, true);
+  }
+
+  // フォームを初期化
+  $("stepsInput").value = "";
+  $("removePhotoBtn").click();
+  setToday();
+  renderAll();
+});
+
+/* ---------- 全消去 ---------- */
+$("resetBtn").addEventListener("click", ()=>{
+  if(!confirm("すべての記録を消去して、日本橋からやり直しますか？\nこの操作は取り消せません。")) return;
+  posts = [];
+  localStorage.removeItem(STORAGE_KEY);
+  renderAll();
+  showMsg("記録を消去しました。新たな旅立ちです。", true);
+});
+
+/* ---------- 初期化 ---------- */
+function setToday(){
+  $("dateInput").value = new Date().toISOString().slice(0,10);
+}
+function initDetails(){
+  // PCでは街道図を常時展開
+  const det = $("kaidoDetails");
+  const mq = window.matchMedia("(min-width:900px)");
+  const apply = ()=>{ det.open = mq.matches ? true : det.open; if(mq.matches) det.open = true; };
+  mq.addEventListener ? mq.addEventListener("change", apply) : mq.addListener(apply);
+  apply();
+}
+
+setToday();
+initDetails();
+renderAll();
+</script>
 </body>
 </html>
